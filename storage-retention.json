@@ -81,6 +81,10 @@
     {
       "path": "target",
       "reason": "Single shared compiler staging cache for ongoing required generic codec and replication adapter variants; no copied experiment dependency trees"
+    },
+    {
+      "path": "build/native-scale-v3",
+      "reason": "Selected native bulk routing and scale admission baseline with full source/lock/compiler bindings"
     }
   ],
   "safe_to_remove": [

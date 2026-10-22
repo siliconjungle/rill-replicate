@@ -1,0 +1,51 @@
+{
+  "kind": "registered-native-bulk-routing-and-scale-admission",
+  "date": "2026-10-22",
+  "upstream": {
+    "bevy_replicon": "0.45.2",
+    "bevy": "0.20.0",
+    "toolchain": "1.97.1"
+  },
+  "stages": [
+    1,
+    8,
+    64,
+    512
+  ],
+  "initial_modes": [
+    "full",
+    "diff"
+  ],
+  "traces": [
+    "sync",
+    "loss"
+  ],
+  "ack_delays": [
+    0,
+    4,
+    24
+  ],
+  "frames": 32,
+  "payload_bytes": 2048,
+  "proofs": [
+    "actual independent native client Apps",
+    "batched native handshake and message routing; no quadratic retain-sent per client",
+    "complete dataset equality after every applied revision",
+    "unreliable mutations can be dropped/duplicated/reordered",
+    "reliable updates and native ACK channel preserve FIFO; ACK delay never drops reliable messages",
+    "final convergence after delay/loss",
+    "all clients authorized before dataset publication"
+  ],
+  "measurements": [
+    "setup wall time",
+    "application mutation time",
+    "server update time",
+    "outbound routing time",
+    "client update time",
+    "ACK routing time",
+    "native wire-message bytes",
+    "fresh process user/system CPU and peak RSS"
+  ],
+  "capacity_policy": "Measure staged memory before launching 20k independent native client Apps on the 8 GiB host. Never suspend/kill existing workers. Native server 20k and client-oracle resource costs must be distinguished; if whole-client Apps do not fit, preserve the finding and continue with a transparent server/receiver harness design, not a defeated-engine claim.",
+  "scope": "Admission/development observations only. Native Diffable consumes application-authored operations; full snapshots and authored-op comparisons remain separate layers until Rill receives the same inputs. No cross-harness winner/CI/20k native capacity claim from staged runs."
+}
