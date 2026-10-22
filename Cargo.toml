@@ -1,0 +1,22 @@
+[package]
+name = "rill-replicate"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+description = "Transport-independent acknowledged-baseline state replication"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/siliconjungle/rill-replicate"
+
+[dependencies]
+
+[profile.dev]
+debug = 0
+incremental = false
+
+[profile.release]
+debug = 0
+incremental = false
+
+[profile.bench]
+debug = 0
+incremental = false

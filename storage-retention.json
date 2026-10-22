@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "state": "required Replicate implementation and proof work; 100 GB reserve unmet (~43 GiB free); active State workers untouched",
+  "keep": [
+    {
+      "path": ".git",
+      "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": ".gitignore",
+      "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": "Cargo.toml",
+      "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": "Cargo.lock",
+      "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": "LICENSE-MIT",
+      "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": "LICENSE-APACHE",
+      "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": "README.md",
+      "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": "src",
+      "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": "tests",
+      "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": "examples",
+      "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": "research",
+      "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": "tools",
+      "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": "evidence",
+      "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": "storage-retention.json",
+      "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    }
+  ],
+  "safe_to_remove": []
+}
