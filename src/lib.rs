@@ -7,6 +7,7 @@
 #![forbid(unsafe_code)]
 
 pub mod bytes;
+pub mod wire;
 
 use std::collections::{HashMap, VecDeque};
 use std::sync::Arc;
@@ -333,6 +334,23 @@ impl<T, C: Codec<T>> Sender<T, C> {
         true
     }
 
+    /// Resolve a wire ACK in the transport-bound session. Only an exact live
+    /// attempt can confirm a revision; expired, duplicate and unknown ACKs fail.
+    pub fn acknowledge_attempt(&mut self, session: Session, attempt: u64) -> bool {
+        let Some(peer) = self.peers.get_mut(&session) else {
+            return false;
+        };
+        let Some(index) = peer.pending.iter().position(|r| r.attempt == attempt) else {
+            return false;
+        };
+        let receipt = peer.pending.remove(index).expect("located live attempt");
+        peer.acknowledged = Some(
+            peer.acknowledged
+                .map_or(receipt.revision, |r| r.max(receipt.revision)),
+        );
+        true
+    }
+
     /// Application-driven response to a receiver MissingBaseline error. Already
     /// emitted envelopes may still arrive; the receiver's freshness check applies.
     pub fn resynchronize(&mut self, session: Session) -> Result<(), Error<C::Error>> {
@@ -379,27 +397,37 @@ impl<T> Receiver<T> {
         envelope: &Envelope,
         codec: &C,
     ) -> Result<Applied, Error<C::Error>> {
-        if envelope.receipt.session != self.session {
+        self.apply_parts(envelope.receipt, envelope.baseline, &envelope.body, codec)
+    }
+
+    /// Apply a borrowed transport payload without constructing an intermediate
+    /// owned envelope. Decoding still produces a complete independently held T.
+    pub fn apply_parts<C: Codec<T>>(
+        &mut self,
+        receipt: Receipt,
+        baseline: Option<u64>,
+        body: &[u8],
+        codec: &C,
+    ) -> Result<Applied, Error<C::Error>> {
+        if receipt.session != self.session {
             return Err(Error::WrongSession);
         }
-        let revision = envelope.receipt.revision;
-        if envelope.baseline.is_some_and(|r| r > revision) {
+        let revision = receipt.revision;
+        if baseline.is_some_and(|r| r > revision) {
             return Err(Error::InvalidEnvelope);
         }
         if self.revision().is_some_and(|r| revision <= r) {
             return Ok(Applied::Stale);
         }
-        let state = match envelope.baseline {
-            None => codec.decode_full(&envelope.body).map_err(Error::Codec)?,
+        let state = match baseline {
+            None => codec.decode_full(body).map_err(Error::Codec)?,
             Some(base) => {
                 let (_, state) = self
                     .history
                     .iter()
                     .find(|(r, _)| *r == base)
                     .ok_or(Error::MissingBaseline(base))?;
-                codec
-                    .decode_delta(state, &envelope.body)
-                    .map_err(Error::Codec)?
+                codec.decode_delta(state, body).map_err(Error::Codec)?
             }
         };
         self.history.push_back((revision, Arc::new(state)));

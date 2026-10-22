@@ -1,0 +1,40 @@
+   Compiling rill-replicate v0.1.0 (/Users/james/Documents/ChatGPT/3d-modelling/rill-replicate)
+    Finished `release` profile [optimized] target(s) in 6.00s
+     Running unittests src/lib.rs (target/release/deps/rill_replicate-1fab6d743a4f9ad9)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/bytes.rs (target/release/deps/bytes-d6b9ed72285a6396)
+
+running 2 tests
+test malformed_patch_and_output_limits ... ok
+test all_run_configs_exact_variable_size_model ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/contracts.rs (target/release/deps/contracts-0bae7349aaba4d24)
+
+running 9 tests
+test cached_bodies_reclaim_and_invalid_envelopes_preserve_receiver ... ok
+test malformed_codec_inputs_do_not_allocate_from_untrusted_counts ... ok
+test dense_adaptive_chooses_full_and_sparse_shares_delta ... ok
+test encoding_failure_does_not_create_an_attempt ... ok
+test sharing_fallback_and_bounds ... ok
+test exact_attempt_ack_session_and_monotonic_baseline ... ok
+test stalled_peer_does_not_pin_application_history ... ok
+test missing_baseline_decode_failure_resync_and_late_packets ... ok
+test deterministic_loss_reordering_delete_reinsert_model_all_policies ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/wire.rs (target/release/deps/wire-9d9a82277300f321)
+
+running 3 tests
+test malformed_headers_and_ack_streams_fail_without_copying ... ok
+test all_integer_edges_and_borrowed_slice_identity ... ok
+test every_policy_framed_borrowed_apply_exact_attempt_ack_and_session ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

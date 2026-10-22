@@ -1,0 +1,23 @@
+{
+  "binary": "native-replay-v4",
+  "binary_sha256": "53a21ae0364a2869af3a78d2b13879480076796659f43349f2c422c8fc85cd02",
+  "build_receipt_sha256": "67648af0242ec714d048ad6695dbfebdc702ef72fceff52a0e87a1df50200bf9",
+  "plan_sha256": "c39e75c4e2dfde257d0f0eef5f6f2656a0b17850650330db0f2eff4cc6ef4c84",
+  "plan": "research/native-replay-v4-plan.json",
+  "tasks": 48,
+  "clients": [
+    1,
+    8,
+    64,
+    512
+  ],
+  "kind": "replay",
+  "complete": true,
+  "failures": [],
+  "started_at": 1792642495.47247,
+  "workers": 2,
+  "rss_scope": "Peak entire fixture; replay includes retained traces and oracle work, not library-only memory",
+  "claim": "development/admission only; no cross-engine performance acceptance",
+  "finished_at": 1792642502.0704,
+  "runs_sha256": "7e3678cad710447714dd5563d2b7a78f3008ea9141981bca5468af18c6bc64ab"
+}

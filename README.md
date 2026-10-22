@@ -33,6 +33,9 @@ Upstream Replicon, Lightyear and Naia are research candidates, not defeated engi
 The optional `comparisons` feature admits actual binary-delta codecs separately;
 `bytes::ByteRuns` is an opt-in generic byte codec with a configurable output limit.
 The second study compares 52 codec combinations. None is an accepted winner.
+The [native replay method](research/native-replay-method.md) now proves the full
+12-case grid at 20,000 simultaneous native server peers with exhaustive sequential
+client decoding and exact ACK checks. This is a protocol simulation, not sockets.
 
 ```sh
 RUSTUP_TOOLCHAIN=stable cargo test --release --all-targets --locked
@@ -62,3 +65,18 @@ authentication, transport, congestion control, durable recovery, and events are
 not yet implemented. Complete map snapshots can represent membership/removals;
 model tests check deletion and reinsertion. Rill Delivery remains a separate
 scheduler; a chain of deltas cannot be treated as independently replaceable state.
+
+## Experimental wire boundary
+
+`wire::Header` builds a canonical variable-length header on the stack. Use
+`Header::append` for a contiguous message or `Header::slices` to borrow the header
+and shared body for vectored I/O. `wire::decode` borrows its input body and can feed
+`Receiver::apply_parts` directly. `wire::Ack`/`wire::Acks` carry exact attempt IDs;
+`Sender::acknowledge_attempt` resolves only a still-live attempt in the transport's
+bound Session. Existing typed envelopes and full Receipts remain supported.
+
+The transport supplies message boundaries, data/ACK direction, a unique session
+incarnation and authentication; old packets must retain their original session
+binding. Codec/schema negotiation is application-owned. The v1 wire format is
+experimental. These boundaries enable a fair framing comparison; reduced copying
+alone does not establish a speed improvement.

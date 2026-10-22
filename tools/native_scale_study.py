@@ -85,6 +85,11 @@ def audit(label):
         if v['trace']=='loss' and v[peer_key]>=8:assert v['dropped']>0 and v['delayed']>0 and v['duplicated']>0
     result={'complete':True,'processes':len(rows),'clients':r['clients'],'receipt_sha256':sha(folder/'receipt.json'),'runs_sha256':r['runs_sha256'],
             'claim':'native full/diff bulk routing, complete values, delayed ordered ACKs, unreliable message faults and process resource evidence; no speed acceptance'}
+    if replay:
+        result.update({'kind':'exhaustive-native-decoder-replay','simultaneous_server_peer_counts':r['clients'],
+                       'max_simultaneous_native_decoder_apps':1,'total_native_decoder_replays':sum(v['native_decoder_replays']for v in rows),
+                       'full_value_checks':sum(v['full_value_checks']for v in rows),'exact_ack_frames':sum(v['exact_ack_frames']for v in rows),
+                       'scope':'Fixed-clock deterministic protocol simulation; all native server peers coexist, client Apps are replayed sequentially. ACK byte predictions and application-before-server-ACK delivery are checked exhaustively. Not live sockets or client latency.'})
     (ROOT/'evidence'/f'{label}-audit.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
 
 

@@ -93,3 +93,28 @@ capability proofs, not the separate resource path or a performance comparison.
 Timing fairness, native ACK-delay/reordering/history-expiry coverage, alternate
 engine adapters and 20k native-engine scaling remain open. The source-discovery catalog explicitly separates algorithms,
 replication engines and support packages; metadata discovery is not admission.
+
+## Native bulk and exhaustive 20k decoder replay
+
+The native bulk router passed 48 direct client-App processes at 1/8/64/512 clients,
+including full/native-diff, loss/duplicates/reordering and 0/4/24-frame ordered ACK
+delays. The fixed-clock replay harness then passed 48 corresponding staged
+processes and all **12 processes at 20,000 simultaneous native server peers**.
+Every process decodes every recipient using an actual fresh native client App;
+responses must match the predicted native ACK/handshake bytes exactly. Aggregate:
+240,000 native decoder replays and 12,080,000 complete-value/ACK-frame checks.
+The ACKed target must be applied by logical server ACK delivery, not merely
+accepted into a native buffer. See native-replay-method.md for the proof argument,
+resource costs and actual limits. This is not a live-socket or end-to-end latency
+measurement, and it does not hold 20,000 native client Apps in memory at once.
+
+The new generic wire boundary passes 17 all-feature checks and all-target Clippy;
+14 default-core checks also pass on the declared Rust 1.85 minimum. It adds stack
+headers, contiguous/vectored output, bounded borrowed decoding, borrowed Receiver
+application and exact attempt ACKs. No normal dependency is added. Source-bound
+validation lives in evidence/wire-v5-validation.json.
+
+Matched engine framing/input costs, a Rill authored-change input equivalent to
+native Diffable, broad payload/scope cases, other engine adapters, library-only
+memory, sustained latency and final serial paired statistics remain outstanding.
+The full performance objective remains unmet.
