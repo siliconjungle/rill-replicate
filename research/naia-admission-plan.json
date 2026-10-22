@@ -1,0 +1,40 @@
+{
+  "kind": "registered-next-independent-native-engine-admission",
+  "date": "2026-10-22",
+  "packages": [
+    {
+      "name": "naia-server",
+      "version": "0.25.0",
+      "sha256": "9de630c516ea3ce3f500c6737b8ff947fb34109a1f04fe749b24f681c8d09709"
+    },
+    {
+      "name": "naia-client",
+      "version": "0.25.0",
+      "sha256": "8b4f2813f2943281ef689c623ca8b3284bb0d5839234b1878e41af4bc827fe73"
+    },
+    {
+      "name": "naia-shared",
+      "version": "0.25.0",
+      "sha256": "91d7eb0e9cac105411efdc15b3cb674cdf8141900c190274c7da061eb7db542d"
+    }
+  ],
+  "scope": "Actual Naia server/client full Dataset replication, independent from Replicon. Generic complete byte dataset and revision, no application-specific code.",
+  "native_features": [
+    "transport_local",
+    "test_time"
+  ],
+  "source_findings": [
+    "Native local transport and packet recording/injection are available in published sources, avoiding a fake engine or real-socket-only fixture.",
+    "Native test clock is exposed; actual units and every advancing timer must be verified before fixed-clock claims.",
+    "WorldRefType/WorldMutType require an actual container adapter; choose upstream-compatible minimal non-rendering container and retain exact source/license if reused."
+  ],
+  "gates": [
+    "Compile exact published source with minimal deps; preserve build failures as failures, not wins.",
+    "Small actual-server/client handshake and full Dataset value reconstruction before any speed comparison.",
+    "Authored property edits and full snapshots are different input contracts; compare matched input paths separately.",
+    "Loss/duplication/reordering, delayed ACKs, reconnect, deletion and final convergence require actual native decoders and explicit applicable semantics.",
+    "Stage 1/8/64/512 before 20k peer proof and resource gate; exhaustive client replay only if native feedback can be causally proved rather than guessed.",
+    "Match complete app-message and application decode/publication/ACK counting boundaries to Rill before comparative timing."
+  ],
+  "status": "Selected immutable source baseline, no adapter or performance admission yet; existing Replicon/Rill cohorts continue undisturbed."
+}

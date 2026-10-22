@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "state": "required ongoing matched replication-engine performance work; ~41 GiB free, 100 GB reserve unmet; active workers untouched",
+  "state": "Required matched replication-engine performance work; ~40 GiB free, 100 GB reserve unmet; active workers untouched",
   "keep": [
     {
       "path": ".git",
@@ -97,6 +97,18 @@
     {
       "path": "build/matched-snapshot-v7",
       "reason": "Required contiguous-history and single cache lookup candidate, selected paired v6/v7 performance reproduction input"
+    },
+    {
+      "path": "research/source-archives/naia-server-0.25.0.crate",
+      "reason": "Selected exact independent native-engine admission reproduction baseline; checksum and inspected source hashes in research/naia-source-inputs.json"
+    },
+    {
+      "path": "research/source-archives/naia-client-0.25.0.crate",
+      "reason": "Selected exact independent native-engine admission reproduction baseline; checksum and inspected source hashes in research/naia-source-inputs.json"
+    },
+    {
+      "path": "research/source-archives/naia-shared-0.25.0.crate",
+      "reason": "Selected exact independent native-engine admission reproduction baseline; checksum and inspected source hashes in research/naia-source-inputs.json"
     }
   ],
   "safe_to_remove": [
@@ -187,6 +199,10 @@
     {
       "path": "evidence/matched-snapshot-v6-freeze.log",
       "reason": "Freeze stdout duplicates selected build receipt JSON; source/compiler/binary and build log remain retained"
+    },
+    {
+      "path": "evidence/matched-snapshot-v7-freeze.log",
+      "reason": "Freeze stdout duplicates selected v7 build receipt JSON and build log; no unique proof or measurement"
     }
   ]
 }

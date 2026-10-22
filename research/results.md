@@ -118,3 +118,26 @@ Matched engine framing/input costs, a Rill authored-change input equivalent to
 native Diffable, broad payload/scope cases, other engine adapters, library-only
 memory, sustained latency and final serial paired statistics remain outstanding.
 The full performance objective remains unmet.
+
+## Matched snapshots and contiguous-history sender candidate
+
+The v6 frozen binary (source `870849755e3e841c741be283c605efa49bd1cf77`)
+uses one compiler/binary for native Replicon full snapshots and generic Rill
+framed snapshots. All 1,044 configuration-admission processes and all 660
+64-recipient payload/ACK/fault processes passed. The complete 330-process target
+cohort is still running. The staged review retains every fixed contrast,
+including time or byte losses. See matched-snapshot-method.md for costs,
+equivalent inputs, remaining capability differences and reproduction paths.
+
+The v7 candidate (source `09d8720ea42e557508449534b835f4ca0b56e603`) removes
+linear sender-history searches and a duplicate cache lookup. All 1,044 actual
+framed configuration-admission processes pass, plus 17 all-feature checks,
+Clippy and 14 Rust 1.85 default-core checks. Its 108-process counterbalanced
+20k v6/v7 comparison is queued behind the active v6 target cohort; no speed
+improvement has been accepted. The old frozen executable remains the control.
+
+Exact published Naia 0.25.0 archives are checksum-verified and selected as the
+next independent native-engine admission baseline. Its local transport and
+test clock are present in actual source. This is source inspection, not an
+implemented adapter or defeated library; the separate admission plan names
+the remaining proof gates.

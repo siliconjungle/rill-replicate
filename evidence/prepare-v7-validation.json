@@ -1,0 +1,57 @@
+{
+  "complete": true,
+  "source_commit": "09d8720ea42e557508449534b835f4ca0b56e603",
+  "inputs": {
+    "Cargo.toml": "b9e9ec8145ddfd99cdf44fa22040f052b4f6b30f98951228cc3c7c04c1fb13d1",
+    "Cargo.lock": "a80f1e0eeb9c674228cacc5d98edd995b5b18fd1897ee2138b83f09492e3dd26",
+    "research/prepare-hot-path-v7-plan.json": "fcedd7d33ee1519c895ec1037d3db8a328b4c483a7d328b7e8c982d1c1bc509a",
+    "src/lib.rs": "2b64d62f7f57f845c755535d52064bfe0215cfc3e38f18dd0ce861a11ebb11b1",
+    "src/bytes.rs": "72735b89b1f37c3265a3d27e62f237d3bc55ebe8acdda1b874b88e8c21bbf04a",
+    "src/wire.rs": "7a97ecde0351a25577efbd69a65cdd8050d6848c95a321f0ac75fce3fe55c458",
+    "tests/bytes.rs": "4bd9dad4baf735a87447eed5d3ff9e5161fd2e0a1ad3218661b4f6a9a222620b",
+    "tests/contracts.rs": "6781b7330c5b7438fdf7342ee9daaee9c4f7e9b328104bedf69434aea7f0db78",
+    "tests/wire.rs": "33434d302c6796cf00a0ea64cb19cdd4081d176d43a622cdb5045ba6d5514756",
+    "tests/support/mod.rs": "7923bb18d31ab3f583a8ade72f312c883fa7a1cbea4ccd735cb7b2c5b11d1811",
+    "examples/byte_fanout.rs": "b504c120f69c07914a87b511fe9790ce4116e4e10d87a577a1c29d02a3c5c6ad",
+    "examples/fanout.rs": "c9a51c0c31a57c9d8c1bbea4dd5f7509cb3178082d2cbebacaa03a05970ca3ef",
+    "examples/codec.rs": "b45d3201100ca39d3a655af143034bfbd341020271dba5ed4055b48de4ba275f",
+    "examples/support/byte_codecs.rs": "0c0b1fcec0d0ddffc9dcae780e7fb0ab19f82b53ad51bd6be3737ea87c83fd4a"
+  },
+  "logs": {
+    "evidence/prepare-v7-tests.log": "aeefd419794c6e465af97bd2b81b3e2ba91c4ed261a72175ffb962d2399c3fbb",
+    "evidence/prepare-v7-clippy.log": "698bb0a4c83676a5d77374f7e9f3e757802d87b2ef66ed5486926aba2976ca5a",
+    "evidence/prepare-v7-msrv.log": "985a4919b0c472626fe5e909d73b659b7b3a923343dce8eb7fe2e4d68592052c"
+  },
+  "all_feature_checks": 17,
+  "minimum_rust_default_core_checks": 14,
+  "compiler": "rustc 1.96.0 (ac68faa20 2026-05-25)\nbinary: rustc\ncommit-hash: ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96\ncommit-date: 2026-05-25\nhost: aarch64-apple-darwin\nrelease: 1.96.0\nLLVM version: 22.1.2\n",
+  "minimum_rust_compiler": "rustc 1.85.0 (4d91de4e4 2025-02-17)\nbinary: rustc\ncommit-hash: 4d91de4e48198da2e33413efdcd9cd2cc0c46688\ncommit-date: 2025-02-17\nhost: aarch64-apple-darwin\nrelease: 1.85.0\nLLVM version: 19.1.7\n",
+  "commands": [
+    [
+      "cargo",
+      "test",
+      "--locked",
+      "--all-features",
+      "--all-targets"
+    ],
+    [
+      "cargo",
+      "clippy",
+      "--locked",
+      "--all-features",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    [
+      "cargo",
+      "test",
+      "--locked",
+      "--lib",
+      "--tests"
+    ]
+  ],
+  "profile": "dev debug0 incrementalfalse; proof only, not timed benchmark settings",
+  "claim": "Core protocol/framing/codec model tests pass with direct contiguous sender history lookup and single encoded-cache lookup; no speed acceptance."
+}

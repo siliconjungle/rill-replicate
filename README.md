@@ -36,6 +36,11 @@ The second study compares 52 codec combinations. None is an accepted winner.
 The [native replay method](research/native-replay-method.md) now proves the full
 12-case grid at 20,000 simultaneous native server peers with exhaustive sequential
 client decoding and exact ACK checks. This is a protocol simulation, not sockets.
+The [matched snapshot study](research/matched-snapshot-method.md) now includes
+actual publication, complete message construction, ACK processing and application
+decoding for native Replicon full snapshots and Rill's fixed policy/codec variants.
+Its staging proofs pass; the 20k target and sender optimization comparison are
+still running. No engine speed acceptance follows from the staging results.
 
 ```sh
 RUSTUP_TOOLCHAIN=stable cargo test --release --all-targets --locked
@@ -60,7 +65,7 @@ session, reconstruct exact state, and leave retained immutable inputs unchanged.
 Errors before successful decoding preserve receiver state. Panicking application
 code and destructors are not a transactional recovery boundary.
 
-One scope is the first kernel. Arbitrary overlapping membership, framing,
+One scope is the first kernel. Arbitrary overlapping membership,
 authentication, transport, congestion control, durable recovery, and events are
 not yet implemented. Complete map snapshots can represent membership/removals;
 model tests check deletion and reinsertion. Rill Delivery remains a separate
