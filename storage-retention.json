@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "state": "required ongoing Replicate comparison and native admission; ~42 GiB free, 100 GB reserve unmet; existing workers untouched",
+  "state": "required ongoing matched replication-engine performance work; ~41 GiB free, 100 GB reserve unmet; active workers untouched",
   "keep": [
     {
       "path": ".git",
