@@ -72,7 +72,11 @@
     },
     {
       "path": "build/native-replicon-proof-v1",
-      "reason": "Required actual upstream server/client engine admission proof baseline with complete source/lock/compiler bindings"
+      "reason": "Useful executed native reconnect-retention negative proof; binary and source bindings preserved, not timing-eligible"
+    },
+    {
+      "path": "build/native-replicon-proof-v2",
+      "reason": "Selected native upstream engine proof with explicit fresh receiver/session reconnect policy"
     }
   ],
   "safe_to_remove": [

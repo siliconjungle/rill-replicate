@@ -141,6 +141,9 @@ fn proof(diff: bool, loss: bool) {
         assert_eq!(values(client), [expected.clone()]);
     }
     server.disconnect_client(&mut clients[0]);
+    // Fresh receiver incarnation, as in Rill's Session API. Replicon preserves
+    // prior remote entities on disconnect; reusing an App needs app cleanup.
+    clients[0] = app(diff);
     server.connect_client(&mut clients[0]);
     server.update();
     send(&mut server, &mut clients);
