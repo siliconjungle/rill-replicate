@@ -57,7 +57,32 @@
     {
       "path": "storage-retention.json",
       "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": "build/fanout-v1",
+      "reason": "Selected first required 40-configuration replication proof/performance reproduction baseline"
     }
   ],
-  "safe_to_remove": []
+  "safe_to_remove": [
+    {
+      "path": "evidence/contracts-v1.log",
+      "reason": "Completed intermediate validation superseded by complete final contracts-v3/clippy-v2 logs and reproducible source"
+    },
+    {
+      "path": "evidence/contracts-v2.log",
+      "reason": "Completed intermediate validation superseded by complete final contracts-v3/clippy-v2 logs and reproducible source"
+    },
+    {
+      "path": "evidence/clippy-v1.log",
+      "reason": "Completed intermediate validation superseded by complete final contracts-v3/clippy-v2 logs and reproducible source"
+    },
+    {
+      "path": "evidence/contracts-v3.log",
+      "reason": "Completed intermediate validation superseded by contracts-v4/clippy-v3 after adding shared-full control"
+    },
+    {
+      "path": "evidence/clippy-v2.log",
+      "reason": "Completed intermediate validation superseded by contracts-v4/clippy-v3 after adding shared-full control"
+    }
+  ]
 }
