@@ -26,7 +26,7 @@ def bindings():
     return {str(p.relative_to(ROOT)): digest(p) for p in paths if p.is_file() and '__pycache__' not in str(p)}
 
 
-def freeze(label):
+def freeze(label, example='fanout', features=None):
     binary = ROOT / 'build' / label
     if binary.exists():
         raise RuntimeError('Frozen binary already exists')
@@ -35,12 +35,14 @@ def freeze(label):
     inputs = bindings()
     preflight = subprocess.check_output(['ink-cache', 'prepare-sources', str(ROOT), '--offline'], cwd=ROOT, text=True)
     env = dict(os.environ, RUSTUP_TOOLCHAIN='stable', CARGO_BUILD_JOBS='1')
-    args = ['cargo', 'build', '--release', '--locked', '--example', 'fanout']
+    args = ['cargo', 'build', '--release', '--locked', '--example', example]
+    if features:
+        args += ['--features', features]
     log = ROOT / 'evidence' / f'{label}-build.log'
     with log.open('w') as output:
         subprocess.run(args, cwd=ROOT, env=env, stdout=output, stderr=subprocess.STDOUT, check=True)
     binary.parent.mkdir(exist_ok=True)
-    shutil.copy2(ROOT / 'target/release/examples/fanout', binary)
+    shutil.copy2(ROOT / 'target/release/examples' / example, binary)
     assert inputs == bindings(), 'Inputs changed during build'
     receipt = {
         'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
@@ -102,13 +104,14 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     sub = parser.add_subparsers(dest='action', required=True)
     f = sub.add_parser('freeze'); f.add_argument('label')
+    f.add_argument('--example',default='fanout'); f.add_argument('--features')
     s = sub.add_parser('run')
     s.add_argument('--binary', required=True); s.add_argument('--label', required=True)
     s.add_argument('--peers', type=int, default=20_000); s.add_argument('--frames', type=int, default=32)
     s.add_argument('--workers', type=int, default=2)
     s.add_argument('--cases', nargs='+', choices=['sync','staggered','loss','dense'], default=['sync','staggered','loss','dense'])
     a = parser.parse_args()
-    if a.action == 'freeze': freeze(a.label)
+    if a.action == 'freeze': freeze(a.label,a.example,a.features)
     else:
         assert a.workers>0 and a.peers>0 and a.frames>=32 and len(set(a.cases))==len(a.cases)
         study(a)

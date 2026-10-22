@@ -78,3 +78,13 @@ equivalent applicable semantics. A source catalog is not a list of beaten engine
 
 Source inspection and exact version pins remain open. No dependency or source
 from private Nocturne is needed for the public library.
+
+## Byte-codec admission discovered before timing
+
+Pinned bidiff 1.0.0/sacapart 2.0.0 panics when its source is empty. Preserve the
+native capability probe rather than treating this as a speed loss or hiding it.
+The compatibility adapter emits explicit full replacement for empty bidiff
+sources. Every adapter carries the same one-byte delta/full tag, inside optional
+LZ4 compression. There is no empty-source bypass for other native algorithms.
+Names bidiff-default/single denote those explicit compatibility adapters, not a
+claim that the native library independently implements the replication contract.

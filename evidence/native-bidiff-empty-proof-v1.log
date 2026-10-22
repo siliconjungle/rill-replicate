@@ -1,0 +1,17 @@
+    Finished `release` profile [optimized] target(s) in 0.22s
+     Running unittests examples/codec.rs (target/release/examples/codec-026910b180b6e588)
+
+running 1 test
+
+thread 'tests::native_bidiff_empty_source_capability_requires_fallback' (2749305) panicked at /Users/james/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sacapart-2.0.0/src/lib.rs:94:18:
+partitioned suffix arrays should always find at least one longest common substring
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+native bidiff single=false: empty-source panic reproduced; adapter uses explicit full fallback
+
+thread 'tests::native_bidiff_empty_source_capability_requires_fallback' (2749305) panicked at /Users/james/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sacapart-2.0.0/src/lib.rs:94:18:
+partitioned suffix arrays should always find at least one longest common substring
+native bidiff single=true: empty-source panic reproduced; adapter uses explicit full fallback
+test tests::native_bidiff_empty_source_capability_requires_fallback ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s
+

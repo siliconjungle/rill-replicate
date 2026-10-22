@@ -95,6 +95,22 @@
     {
       "path": "evidence/fanout-v1-freeze.log",
       "reason": "Completed duplicate console rendering of selected structured fanout-v1-build.json; canonical build log and receipt retained"
+    },
+    {
+      "path": "evidence/byte-codec-tests-v1.log",
+      "reason": "Completed intermediate compile/lint/model attempt superseded by final byte-codec-tests-v4/clippy-v2 and focused native-bidiff-empty proof; source history and registered inputs retained"
+    },
+    {
+      "path": "evidence/byte-codec-tests-v2.log",
+      "reason": "Completed intermediate compile/lint/model attempt superseded by final byte-codec-tests-v4/clippy-v2 and focused native-bidiff-empty proof; source history and registered inputs retained"
+    },
+    {
+      "path": "evidence/byte-codec-tests-v3.log",
+      "reason": "Completed intermediate compile/lint/model attempt superseded by final byte-codec-tests-v4/clippy-v2 and focused native-bidiff-empty proof; source history and registered inputs retained"
+    },
+    {
+      "path": "evidence/byte-codec-clippy-v1.log",
+      "reason": "Completed intermediate compile/lint/model attempt superseded by final byte-codec-tests-v4/clippy-v2 and focused native-bidiff-empty proof; source history and registered inputs retained"
     }
   ]
 }

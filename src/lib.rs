@@ -6,6 +6,8 @@
 //! History/cache bounds are logical counts/encoded bytes, not a total heap bound.
 #![forbid(unsafe_code)]
 
+pub mod bytes;
+
 use std::collections::{HashMap, VecDeque};
 use std::sync::Arc;
 
