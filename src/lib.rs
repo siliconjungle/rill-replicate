@@ -253,24 +253,27 @@ impl<T, C: Codec<T>> Sender<T, C> {
         let peer = self.peers.get(&session).ok_or(Error::UnknownSession)?;
         let attempt = peer.next_attempt.checked_add(1).ok_or(Error::Exhausted)?;
         let acknowledged = peer.acknowledged;
-        let base = acknowledged.and_then(|r| self.history.iter().find(|(rev, _)| *rev == r));
-        let expired_base = acknowledged.is_some() && base.is_none();
         let full_only = matches!(self.strategy, Strategy::Full | Strategy::SharedFull);
+        // Sender revisions are consecutive, and eviction removes only the front.
+        // Receiver histories can have gaps and cannot use this arithmetic.
+        let oldest = self.history.front().expect("nonempty history").0;
         let requested = if full_only {
             None
         } else {
-            base.map(|(rev, _)| *rev)
+            acknowledged.filter(|r| *r >= oldest && *r <= self.revision)
         };
-        let encoded = if self.strategy.shared() && self.cache.contains_key(&requested) {
+        let expired_base = !full_only && acknowledged.is_some() && requested.is_none();
+        let cached = self
+            .strategy
+            .shared()
+            .then(|| self.cache.get(&requested))
+            .flatten();
+        let encoded = if let Some(encoded) = cached {
             self.stats.cache_hits += 1;
-            self.cache[&requested].clone()
+            encoded.clone()
         } else if let Some(rev) = requested {
-            let base = &self
-                .history
-                .iter()
-                .find(|(r, _)| *r == rev)
-                .expect("retained")
-                .1;
+            let offset = usize::try_from(rev - oldest).expect("retained history index");
+            let base = &self.history[offset].1;
             let bytes = self
                 .codec
                 .encode_delta(base, self.current())

@@ -93,6 +93,10 @@
     {
       "path": "build/matched-snapshot-v6",
       "reason": "Selected required matched snapshot native/Rill complete-message development proof and timing baseline; exact compiler/source/lock bindings retained"
+    },
+    {
+      "path": "build/matched-snapshot-v7",
+      "reason": "Required contiguous-history and single cache lookup candidate, selected paired v6/v7 performance reproduction input"
     }
   ],
   "safe_to_remove": [
@@ -179,6 +183,10 @@
     {
       "path": "evidence/matched-snapshot-v6-local-smoke.json",
       "reason": "Initial untimed adapter smoke; retire after selected frozen v6 complete source-bound cohort supersedes it"
+    },
+    {
+      "path": "evidence/matched-snapshot-v6-freeze.log",
+      "reason": "Freeze stdout duplicates selected build receipt JSON; source/compiler/binary and build log remain retained"
     }
   ]
 }

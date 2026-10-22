@@ -48,6 +48,8 @@ def run(args):
     assert sha(binary) == build['binary_sha256']
     cohorts = json.loads((ROOT / COHORTS).read_text())
     phases = cohorts['phases']
+    if args.admission_only:
+        phases = phases[:1]
     assert args.workers in [1, 2]
     root = ROOT / 'evidence' / args.label
     root.mkdir(exist_ok=False)
@@ -152,6 +154,7 @@ if __name__ == '__main__':
     run_parser.add_argument('--binary', default='matched-snapshot-v6')
     run_parser.add_argument('--label', required=True)
     run_parser.add_argument('--workers', type=int, default=2)
+    run_parser.add_argument('--admission-only', action='store_true', help='Run only the first correctness-admission cohort')
     audit_parser = sub.add_parser('audit')
     audit_parser.add_argument('folder')
     args = parser.parse_args()
