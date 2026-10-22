@@ -159,6 +159,14 @@
     {
       "path": "evidence/native-scale-local-diff-v3.log",
       "reason": "Completed initial bulk-router compile/smoke attempt; selected frozen native-scale-v3 receipt and full staged proof/resource study supersede these unbound intermediate observations"
+    },
+    {
+      "path": "evidence/native-replay-local-build-v4.log",
+      "reason": "Completed initial 8-peer replay compile/probe; superseded by selected frozen v4 staged proof and input bindings"
+    },
+    {
+      "path": "evidence/native-replay-local-smoke-v4.log",
+      "reason": "Completed initial 8-peer replay compile/probe; superseded by selected frozen v4 staged proof and input bindings"
     }
   ]
 }

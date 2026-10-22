@@ -1,0 +1,7 @@
+   Compiling rill-replicate-replicon-admission v0.0.0 (/Users/james/Documents/ChatGPT/3d-modelling/rill-replicate/research/replicon-admission)
+    Finished `release` profile [optimized] target(s) in 4.63s
+     Running `research/replicon-admission/target/release/rill-replicate-replicon-admission`
+{"engine":"bevy_replicon-0.45.2","native_diff":false,"loss":false,"clients":4,"revisions":32,"dropped_mutations":0,"complete_values":true,"despawn_reinsert":true,"reconnect":true,"timing_eligible":false}
+{"engine":"bevy_replicon-0.45.2","native_diff":false,"loss":true,"clients":4,"revisions":32,"dropped_mutations":24,"complete_values":true,"despawn_reinsert":true,"reconnect":true,"timing_eligible":false}
+{"engine":"bevy_replicon-0.45.2","native_diff":true,"loss":false,"clients":4,"revisions":32,"dropped_mutations":0,"complete_values":true,"despawn_reinsert":true,"reconnect":true,"timing_eligible":false}
+{"engine":"bevy_replicon-0.45.2","native_diff":true,"loss":true,"clients":4,"revisions":32,"dropped_mutations":24,"complete_values":true,"despawn_reinsert":true,"reconnect":true,"timing_eligible":false}

@@ -1,0 +1,21 @@
+{
+  "binary": "native-scale-v3",
+  "binary_sha256": "326e446485b259e59af0c99b67af853ebfff5b421750db92db7a819c27b1d657",
+  "build_receipt_sha256": "778d46487feba3f5b8d6e1fbdab1165e4370250ddf21cb53a94e01e49f2c9479",
+  "plan_sha256": "61a88fee2b4d8653be691ac22a452fb83c039de4f374841d128a74435c547e16",
+  "tasks": 48,
+  "clients": [
+    1,
+    8,
+    64,
+    512
+  ],
+  "complete": true,
+  "failures": [],
+  "started_at": 1792642029.2627609,
+  "workers": 1,
+  "rss_scope": "Peak entire native server+client fixture process, not library-only memory",
+  "claim": "development/admission only; no cross-engine performance acceptance",
+  "finished_at": 1792642046.118166,
+  "runs_sha256": "24a6b83b28ea7dc94eb8636be2f1e96efac0c908b3633eceb159afcd9a70104b"
+}
