@@ -69,6 +69,10 @@
     {
       "path": "build/byte-fanout-v2",
       "reason": "Selected required generic byte-codec and actual replication admission proof/timing baseline with source/compiler bindings"
+    },
+    {
+      "path": "build/native-replicon-proof-v1",
+      "reason": "Required actual upstream server/client engine admission proof baseline with complete source/lock/compiler bindings"
     }
   ],
   "safe_to_remove": [

@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "processes": 36,
+  "kind": "replication",
+  "receipt_sha256": "bf23558df18b9e1b668fb21c0565e3fb23589029747aa1e75415594f9790d2db",
+  "runs_sha256": "6e4b17196cc8db3554ca475e7769f37c919d9c13fa6498d5fd2ccffe21a91c1d",
+  "source_commit": "ad4631dffe945433c2b1b9b891bba25e23733441",
+  "claim": "proof coverage only; no final performance acceptance"
+}

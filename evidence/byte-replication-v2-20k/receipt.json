@@ -1,0 +1,16 @@
+{
+  "kind": "replication",
+  "claim": "development-only; upstream codec adapters do not count as independent replication engines",
+  "plan_sha256": "63cb247cfb822e2967b930a479c5c3046b3fb110ab440464176f61c2c2baa55d",
+  "build_receipt_sha256": "b01d05d7c12d9dd16f1a3e7d99827d8beabb5f002d3a41a3475dec1b36def46c",
+  "binary": "byte-fanout-v2",
+  "binary_sha256": "b6cda6ed6224a155ac8c4e3b40306b5fcd10d9e485ee3824428cc3754196dfb5",
+  "smoke": false,
+  "tasks": 36,
+  "workers": 2,
+  "complete": true,
+  "failures": [],
+  "started_at": 1792641154.954444,
+  "finished_at": 1792641337.781902,
+  "runs_sha256": "6e4b17196cc8db3554ca475e7769f37c919d9c13fa6498d5fd2ccffe21a91c1d"
+}

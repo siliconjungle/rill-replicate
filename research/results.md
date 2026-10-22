@@ -65,7 +65,9 @@ configurations, two full controls) passed 520 component smoke processes and the
 **6,240-process full component grid**. Complete reconstructed bytes and matching
 trace checksums are verified, including empty, sparse, dense, random, shifted and
 resized payloads. The actual adapter path through Rill's Sender/Receiver passed
-36 small-recipient processes. Its corresponding 36-process 20k study is running.
+36 small-recipient processes. Its corresponding **36-process 20k study also passed**, including actual receiver
+reconstruction, loss and final convergence. These use the same Rill kernel with
+codec adapters; they are not separate upstream replication-engine runs.
 
 Fourteen checks now pass across contract/model/codec tests. All-target/all-feature
 Clippy passes. Pinned bidiff panics on an empty source; the retained native probe
