@@ -1,0 +1,4 @@
+{"engine":"bevy_replicon-0.45.2","native_diff":false,"loss":false,"clients":4,"revisions":32,"dropped_mutations":0,"complete_values":true,"despawn_reinsert":true,"reconnect":true,"timing_eligible":false}
+{"engine":"bevy_replicon-0.45.2","native_diff":false,"loss":true,"clients":4,"revisions":32,"dropped_mutations":24,"complete_values":true,"despawn_reinsert":true,"reconnect":true,"timing_eligible":false}
+{"engine":"bevy_replicon-0.45.2","native_diff":true,"loss":false,"clients":4,"revisions":32,"dropped_mutations":0,"complete_values":true,"despawn_reinsert":true,"reconnect":true,"timing_eligible":false}
+{"engine":"bevy_replicon-0.45.2","native_diff":true,"loss":true,"clients":4,"revisions":32,"dropped_mutations":24,"complete_values":true,"despawn_reinsert":true,"reconnect":true,"timing_eligible":false}

@@ -1,0 +1,23 @@
+{
+  "kind": "registered-generic-wire-boundary-before-matched-engine-timing",
+  "date": "2026-10-22",
+  "reason": "Rill initially counted bodies only; native engine exports complete app messages. Add actual generic framing and borrowed receive before timing comparable boundaries.",
+  "format": "experimental v1 one-byte version/flags plus canonical u64 varints for attempt/revision/optional baseline; payload uses transport-owned message boundary",
+  "session": "Transport binds the unique Session incarnation out of band, as native backend connection identities do. No Session identifier repeated in each message.",
+  "ack": "canonical attempt id only; sender resolves exact still-live attempt/revision locally; original Receipt API retained",
+  "variants": [
+    "contiguous output into caller buffer",
+    "stack header plus shared body using two IoSlice entries",
+    "borrowed decoded body into Receiver::apply_parts; no forced temporary Arc allocation"
+  ],
+  "checks": [
+    "integer boundaries including u64::MAX",
+    "malformed/truncated/overflow/noncanonical encodings",
+    "payload size limit before copying",
+    "matching Session context and stale attempts",
+    "full/delta exact reconstruction through framed path",
+    "parser borrow identity and no-copy I/O slices",
+    "all existing sender/receiver tests remain applicable"
+  ],
+  "performance": "No speed or memory acceptance inferred merely from fewer copies; matched engine benchmark and actual boundary costs remain required."
+}

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "state": "required Replicate implementation and proof work; 100 GB reserve unmet (~43 GiB free); active State workers untouched",
+  "state": "Required matched replication-engine performance work; ~40 GiB free, 100 GB reserve unmet; active workers untouched",
   "keep": [
     {
       "path": ".git",
@@ -57,7 +57,152 @@
     {
       "path": "storage-retention.json",
       "reason": "Required public library source, proof/reproduction inputs or selected evidence"
+    },
+    {
+      "path": "build/fanout-v1",
+      "reason": "Selected first required 40-configuration replication proof/performance reproduction baseline"
+    },
+    {
+      "path": "build/codec-v2",
+      "reason": "Selected required generic byte-codec and actual replication admission proof/timing baseline with source/compiler bindings"
+    },
+    {
+      "path": "build/byte-fanout-v2",
+      "reason": "Selected required generic byte-codec and actual replication admission proof/timing baseline with source/compiler bindings"
+    },
+    {
+      "path": "build/native-replicon-proof-v1",
+      "reason": "Useful executed native reconnect-retention negative proof; binary and source bindings preserved, not timing-eligible"
+    },
+    {
+      "path": "build/native-replicon-proof-v2",
+      "reason": "Selected native upstream engine proof with explicit fresh receiver/session reconnect policy"
+    },
+    {
+      "path": "target",
+      "reason": "Single shared compiler staging cache for ongoing required generic codec and replication adapter variants; no copied experiment dependency trees"
+    },
+    {
+      "path": "build/native-scale-v3",
+      "reason": "Selected native bulk routing and scale admission baseline with full source/lock/compiler bindings"
+    },
+    {
+      "path": "build/native-replay-v4",
+      "reason": "Selected exhaustive native decoder/ACK replay and simultaneous server-peer baseline with fixed virtual time"
+    },
+    {
+      "path": "build/matched-snapshot-v6",
+      "reason": "Selected required matched snapshot native/Rill complete-message development proof and timing baseline; exact compiler/source/lock bindings retained"
+    },
+    {
+      "path": "build/matched-snapshot-v7",
+      "reason": "Required contiguous-history and single cache lookup candidate, selected paired v6/v7 performance reproduction input"
+    },
+    {
+      "path": "research/source-archives/naia-server-0.25.0.crate",
+      "reason": "Selected exact independent native-engine admission reproduction baseline; checksum and inspected source hashes in research/naia-source-inputs.json"
+    },
+    {
+      "path": "research/source-archives/naia-client-0.25.0.crate",
+      "reason": "Selected exact independent native-engine admission reproduction baseline; checksum and inspected source hashes in research/naia-source-inputs.json"
+    },
+    {
+      "path": "research/source-archives/naia-shared-0.25.0.crate",
+      "reason": "Selected exact independent native-engine admission reproduction baseline; checksum and inspected source hashes in research/naia-source-inputs.json"
     }
   ],
-  "safe_to_remove": []
+  "safe_to_remove": [
+    {
+      "path": "evidence/contracts-v1.log",
+      "reason": "Completed intermediate validation superseded by complete final contracts-v3/clippy-v2 logs and reproducible source"
+    },
+    {
+      "path": "evidence/contracts-v2.log",
+      "reason": "Completed intermediate validation superseded by complete final contracts-v3/clippy-v2 logs and reproducible source"
+    },
+    {
+      "path": "evidence/clippy-v1.log",
+      "reason": "Completed intermediate validation superseded by complete final contracts-v3/clippy-v2 logs and reproducible source"
+    },
+    {
+      "path": "evidence/contracts-v3.log",
+      "reason": "Completed intermediate validation superseded by contracts-v4/clippy-v3 after adding shared-full control"
+    },
+    {
+      "path": "evidence/clippy-v2.log",
+      "reason": "Completed intermediate validation superseded by contracts-v4/clippy-v3 after adding shared-full control"
+    },
+    {
+      "path": "evidence/fanout-v1-freeze.log",
+      "reason": "Completed duplicate console rendering of selected structured fanout-v1-build.json; canonical build log and receipt retained"
+    },
+    {
+      "path": "evidence/byte-codec-tests-v1.log",
+      "reason": "Completed intermediate compile/lint/model attempt superseded by final byte-codec-tests-v4/clippy-v2 and focused native-bidiff-empty proof; source history and registered inputs retained"
+    },
+    {
+      "path": "evidence/byte-codec-tests-v2.log",
+      "reason": "Completed intermediate compile/lint/model attempt superseded by final byte-codec-tests-v4/clippy-v2 and focused native-bidiff-empty proof; source history and registered inputs retained"
+    },
+    {
+      "path": "evidence/byte-codec-tests-v3.log",
+      "reason": "Completed intermediate compile/lint/model attempt superseded by final byte-codec-tests-v4/clippy-v2 and focused native-bidiff-empty proof; source history and registered inputs retained"
+    },
+    {
+      "path": "evidence/byte-codec-clippy-v1.log",
+      "reason": "Completed intermediate compile/lint/model attempt superseded by final byte-codec-tests-v4/clippy-v2 and focused native-bidiff-empty proof; source history and registered inputs retained"
+    },
+    {
+      "path": "evidence/replicon-build-v1.jsonl",
+      "reason": "Completed untimed initial dependency build superseded by frozen native proof v1/v2 artifact receipts/logs and source/lock/compiler bindings"
+    },
+    {
+      "path": "evidence/replicon-build-v1.log",
+      "reason": "Completed untimed initial dependency build superseded by frozen native proof v1/v2 artifact receipts/logs and source/lock/compiler bindings"
+    },
+    {
+      "path": "evidence/native-scale-preflight-v3.json",
+      "reason": "Completed initial bulk-router compile/smoke attempt; selected frozen native-scale-v3 receipt and full staged proof/resource study supersede these unbound intermediate observations"
+    },
+    {
+      "path": "evidence/native-scale-build-v3.jsonl",
+      "reason": "Completed initial bulk-router compile/smoke attempt; selected frozen native-scale-v3 receipt and full staged proof/resource study supersede these unbound intermediate observations"
+    },
+    {
+      "path": "evidence/native-scale-build-v3.log",
+      "reason": "Completed initial bulk-router compile/smoke attempt; selected frozen native-scale-v3 receipt and full staged proof/resource study supersede these unbound intermediate observations"
+    },
+    {
+      "path": "evidence/native-scale-local-smoke-v3.log",
+      "reason": "Completed initial bulk-router compile/smoke attempt; selected frozen native-scale-v3 receipt and full staged proof/resource study supersede these unbound intermediate observations"
+    },
+    {
+      "path": "evidence/native-scale-local-diff-v3.log",
+      "reason": "Completed initial bulk-router compile/smoke attempt; selected frozen native-scale-v3 receipt and full staged proof/resource study supersede these unbound intermediate observations"
+    },
+    {
+      "path": "evidence/native-replay-local-build-v4.log",
+      "reason": "Completed initial 8-peer replay compile/probe; superseded by selected frozen v4 staged proof and input bindings"
+    },
+    {
+      "path": "evidence/native-replay-local-smoke-v4.log",
+      "reason": "Completed initial 8-peer replay compile/probe; superseded by selected frozen v4 staged proof and input bindings"
+    },
+    {
+      "path": "evidence/matched-snapshot-v6-local-build.log",
+      "reason": "Initial untimed compile validation; retire after selected frozen v6 source-bound build and correctness study supersede it"
+    },
+    {
+      "path": "evidence/matched-snapshot-v6-local-smoke.json",
+      "reason": "Initial untimed adapter smoke; retire after selected frozen v6 complete source-bound cohort supersedes it"
+    },
+    {
+      "path": "evidence/matched-snapshot-v6-freeze.log",
+      "reason": "Freeze stdout duplicates selected build receipt JSON; source/compiler/binary and build log remain retained"
+    },
+    {
+      "path": "evidence/matched-snapshot-v7-freeze.log",
+      "reason": "Freeze stdout duplicates selected v7 build receipt JSON and build log; no unique proof or measurement"
+    }
+  ]
 }

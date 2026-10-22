@@ -1,0 +1,123 @@
+{
+  "kind": "registered-byte-codec-layer-and-replication-admission",
+  "date": "2026-10-22",
+  "source_inputs": "research/codec-source-inputs.json",
+  "codecs": [
+    "full",
+    "runs-b1-g0",
+    "runs-b1-g4",
+    "runs-b1-g16",
+    "runs-b1-g64",
+    "runs-b4-g0",
+    "runs-b4-g4",
+    "runs-b4-g16",
+    "runs-b4-g64",
+    "runs-b8-g0",
+    "runs-b8-g4",
+    "runs-b8-g16",
+    "runs-b8-g64",
+    "runs-b16-g0",
+    "runs-b16-g4",
+    "runs-b16-g16",
+    "runs-b16-g64",
+    "runs-b64-g0",
+    "runs-b64-g4",
+    "runs-b64-g16",
+    "runs-b64-g64",
+    "bsdiff",
+    "qbsdiff-default",
+    "qbsdiff-small",
+    "bidiff-default",
+    "bidiff-single",
+    "lz4+full",
+    "lz4+runs-b1-g0",
+    "lz4+runs-b1-g4",
+    "lz4+runs-b1-g16",
+    "lz4+runs-b1-g64",
+    "lz4+runs-b4-g0",
+    "lz4+runs-b4-g4",
+    "lz4+runs-b4-g16",
+    "lz4+runs-b4-g64",
+    "lz4+runs-b8-g0",
+    "lz4+runs-b8-g4",
+    "lz4+runs-b8-g16",
+    "lz4+runs-b8-g64",
+    "lz4+runs-b16-g0",
+    "lz4+runs-b16-g4",
+    "lz4+runs-b16-g16",
+    "lz4+runs-b16-g64",
+    "lz4+runs-b64-g0",
+    "lz4+runs-b64-g4",
+    "lz4+runs-b64-g16",
+    "lz4+runs-b64-g64",
+    "lz4+bsdiff",
+    "lz4+qbsdiff-default",
+    "lz4+qbsdiff-small",
+    "lz4+bidiff-default",
+    "lz4+bidiff-single"
+  ],
+  "algorithms": {
+    "own": "generic byte runs: fixed comparison block and maximum unchanged-byte merge gap; no record/schema/game assumption",
+    "qbsdiff-small": "compression level 1, no parallel search, decoder buffer4096/delta128; default variant unchanged",
+    "bidiff-single": "one suffix-sort partition; default variant unchanged",
+    "lz4": "same optional lz4_flex size-prefixed block wrapper around every control/own/upstream delta and full path"
+  },
+  "normal_dependencies": "none; upstream libraries and lz4 only optional comparison feature",
+  "component": {
+    "cases": [
+      "sparse",
+      "dense",
+      "random",
+      "shift",
+      "resize"
+    ],
+    "sizes": [
+      0,
+      64,
+      2048,
+      65536
+    ],
+    "seeds": [
+      4815162342,
+      2937471921
+    ],
+    "revisions": 32,
+    "repetitions": 3,
+    "workers": 2,
+    "scope": "actual encode/decode and complete byte equality; not a replication engine or live-client capacity comparison"
+  },
+  "proofs": [
+    "random variable-length exact models every codec",
+    "bound/malformed own patch tests",
+    "same baseline full ownership and tracked cache/session semantics through Sender",
+    "20k actual receiver reconstruction for initial upstream admissions"
+  ],
+  "replication_initial": {
+    "engines": [
+      "full",
+      "runs-b1-g0",
+      "runs-b8-g4",
+      "runs-b64-g16",
+      "bsdiff",
+      "qbsdiff-default",
+      "qbsdiff-small",
+      "bidiff-default",
+      "bidiff-single"
+    ],
+    "policies": [
+      "shared",
+      "adaptive"
+    ],
+    "peers": 20000,
+    "frames": 32,
+    "history": 16,
+    "cache_entries": 64,
+    "traces": [
+      "sync",
+      "loss"
+    ],
+    "payload_case": "sparse",
+    "scope": "encoding adapters inside the same Rill replication kernel; NOT independent full upstream replication engines"
+  },
+  "acceptance": "All losses and failures retained. No winner from component or parallel timings. Full upstream replication-engine adapters, broader payload/trace/peer/memory coverage, source closure, serial paired statistics and untouched holdouts remain required."
+}

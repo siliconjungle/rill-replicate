@@ -7,7 +7,24 @@ description = "Transport-independent acknowledged-baseline state replication"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/siliconjungle/rill-replicate"
 
+[features]
+default = []
+comparisons = ["dep:bsdiff", "dep:qbsdiff", "dep:bidiff", "dep:bipatch", "dep:lz4_flex"]
+
 [dependencies]
+bsdiff = { version = "=0.2.1", optional = true }
+qbsdiff = { version = "=1.4.4", optional = true }
+bidiff = { version = "=1.0.0", optional = true }
+bipatch = { version = "=1.0.0", optional = true }
+lz4_flex = { version = "=0.14.0", optional = true }
+
+[[example]]
+name = "codec"
+required-features = ["comparisons"]
+
+[[example]]
+name = "byte_fanout"
+required-features = ["comparisons"]
 
 [profile.dev]
 debug = 0

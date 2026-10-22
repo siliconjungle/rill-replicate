@@ -1,0 +1,20 @@
+{
+  "kind": "development-only",
+  "binary_sha256": "737e1f385297b98852c0a7dec70c686bbcad095b5637e2742d290ad7fff0e9d1",
+  "build_receipt_sha256": "d53688009b43c83674e4195d33ee6b6ffc0aa0809375896f21a7f8d842f4db30",
+  "workers": 2,
+  "peers": 20000,
+  "frames": 32,
+  "tasks": 160,
+  "cases": [
+    "sync",
+    "staggered",
+    "loss",
+    "dense"
+  ],
+  "complete": true,
+  "failures": [],
+  "started_at": 1792640513.097646,
+  "finished_at": 1792640608.920767,
+  "runs_sha256": "04649308cf6b9dd5e7959fbea0fff146b1ed3ffba70e068d5b9d97e995df9b80"
+}

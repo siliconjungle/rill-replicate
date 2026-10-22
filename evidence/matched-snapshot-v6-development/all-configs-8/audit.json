@@ -1,0 +1,11 @@
+{
+  "complete": true,
+  "processes": 1044,
+  "phase": "all-configs-8",
+  "receipt_sha256": "727f238875a0cb17bd5a7027bfdd2ea2c97ac7aea9af6baacf40d33eb1a6458f",
+  "runs_sha256": "44e963d1f2ceedaa0462da80b7713b378ce5d3f93309e262d492ab5a5ac6b251",
+  "decoder_replays": 8352,
+  "full_value_checks": 442656,
+  "peak_process_rss_bytes": 19939328,
+  "claim": "Complete framed snapshot proof and exploratory timing. One resident decoder at a time; server peers coexist. No sockets, p99, or all-engine winner."
+}

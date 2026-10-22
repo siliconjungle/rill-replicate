@@ -1,0 +1,26 @@
+[package]
+name = "rill-replicate-replicon-admission"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[workspace]
+
+[dependencies]
+bevy = { version = "=0.20.0", default-features = false, features = ["bevy_state"] }
+bevy_replicon = { version = "=0.45.2", default-features = false, features = ["client", "server"] }
+serde = { version = "1", features = ["derive"] }
+rill-replicate = { path = "../..", features = ["comparisons"] }
+bsdiff = "=0.2.1"
+qbsdiff = "=1.4.4"
+bidiff = "=1.0.0"
+bipatch = "=1.0.0"
+lz4_flex = "=0.14.0"
+
+[profile.dev]
+debug = 0
+incremental = false
+
+[profile.release]
+debug = 0
+incremental = false

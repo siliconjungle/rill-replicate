@@ -1,0 +1,19 @@
+{
+  "complete": true,
+  "processes": 12,
+  "clients": [
+    20000
+  ],
+  "receipt_sha256": "4a8ba72a7302a8574a4fa4caca5314fc5eaac20cf7624fb41ea9a521c27354c6",
+  "runs_sha256": "494ff66d3c740f1d5e5886e65be5079ff0ad9e70766c0f4306c30e6225641b1c",
+  "claim": "native full/diff bulk routing, complete values, delayed ordered ACKs, unreliable message faults and process resource evidence; no speed acceptance",
+  "kind": "exhaustive-native-decoder-replay",
+  "simultaneous_server_peer_counts": [
+    20000
+  ],
+  "max_simultaneous_native_decoder_apps": 1,
+  "total_native_decoder_replays": 240000,
+  "full_value_checks": 12080000,
+  "exact_ack_frames": 12080000,
+  "scope": "Fixed-clock deterministic protocol simulation; all native server peers coexist, client Apps are replayed sequentially. ACK byte predictions and application-before-server-ACK delivery are checked exhaustively. Not live sockets or client latency."
+}

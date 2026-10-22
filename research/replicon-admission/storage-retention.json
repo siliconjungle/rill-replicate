@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "state": "Required matched snapshot engine proof/performance work; same native compiler/cache, frozen previous proofs retained",
+  "keep": [
+    {
+      "path": "Cargo.toml",
+      "reason": "Minimal source/lock/protocol reproduction input for actual upstream engine admission"
+    },
+    {
+      "path": "Cargo.lock",
+      "reason": "Minimal source/lock/protocol reproduction input for actual upstream engine admission"
+    },
+    {
+      "path": "src",
+      "reason": "Minimal source/lock/protocol reproduction input for actual upstream engine admission"
+    },
+    {
+      "path": "protocol.md",
+      "reason": "Minimal source/lock/protocol reproduction input for actual upstream engine admission"
+    },
+    {
+      "path": "storage-retention.json",
+      "reason": "Minimal source/lock/protocol reproduction input for actual upstream engine admission"
+    },
+    {
+      "path": "target",
+      "reason": "Single native 1.97.1 compiler staging cache required for ongoing bulk native engine adapter/20k proof work; no debug or incremental outputs"
+    }
+  ],
+  "safe_to_remove": []
+}

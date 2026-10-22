@@ -1,0 +1,68 @@
+{
+  "complete": true,
+  "source_commit": "fdf77bf7bad4f1171bd570448c1d202587d19025",
+  "inputs": {
+    "Cargo.toml": "b9e9ec8145ddfd99cdf44fa22040f052b4f6b30f98951228cc3c7c04c1fb13d1",
+    "Cargo.lock": "a80f1e0eeb9c674228cacc5d98edd995b5b18fd1897ee2138b83f09492e3dd26",
+    "research/wire-v5-plan.json": "6cb70c62368816fadeee2d69e20533446f180217fa754e4f1c3d25f6e0fa00fd",
+    "src/bytes.rs": "72735b89b1f37c3265a3d27e62f237d3bc55ebe8acdda1b874b88e8c21bbf04a",
+    "src/lib.rs": "c4194232038063e34455e6ff7133ea641b784fc4b732534054b5f3e53ad6dbf9",
+    "src/wire.rs": "7a97ecde0351a25577efbd69a65cdd8050d6848c95a321f0ac75fce3fe55c458",
+    "tests/bytes.rs": "4bd9dad4baf735a87447eed5d3ff9e5161fd2e0a1ad3218661b4f6a9a222620b",
+    "tests/contracts.rs": "6781b7330c5b7438fdf7342ee9daaee9c4f7e9b328104bedf69434aea7f0db78",
+    "tests/support/mod.rs": "7923bb18d31ab3f583a8ade72f312c883fa7a1cbea4ccd735cb7b2c5b11d1811",
+    "tests/wire.rs": "33434d302c6796cf00a0ea64cb19cdd4081d176d43a622cdb5045ba6d5514756",
+    "examples/byte_fanout.rs": "b504c120f69c07914a87b511fe9790ce4116e4e10d87a577a1c29d02a3c5c6ad",
+    "examples/codec.rs": "b45d3201100ca39d3a655af143034bfbd341020271dba5ed4055b48de4ba275f",
+    "examples/fanout.rs": "c9a51c0c31a57c9d8c1bbea4dd5f7509cb3178082d2cbebacaa03a05970ca3ef",
+    "examples/support/byte_codecs.rs": "0c0b1fcec0d0ddffc9dcae780e7fb0ab19f82b53ad51bd6be3737ea87c83fd4a"
+  },
+  "logs": {
+    "evidence/wire-tests-v5.log": "c0ac15fab8de28d1489c89bd43d35c2e692eccff15f5d23322d72609a51d8c01",
+    "evidence/wire-clippy-v5.log": "5db2dfdd39112a61804feb5eb57730c90016f5b2b2e9d5490d85341e78adeffb",
+    "evidence/wire-msrv-v5.log": "ae25d3d1c2f81b43c469da1fe24d39945924fd072c6a1ee06b6c7e67ffc5f7b5",
+    "evidence/wire-preflight-v5.json": "8033b0a408681906683a7bb29de2bbc0c8fd1b8ce38f0dbc29ddeee178ab4521",
+    "evidence/wire-msrv-preflight-v5.json": "8033b0a408681906683a7bb29de2bbc0c8fd1b8ce38f0dbc29ddeee178ab4521",
+    "evidence/wire-normal-dependencies-v5.txt": "1c89bcdee17893fa4230fafcacf3947a8be3665a0559e1e7f54a5d481590995c"
+  },
+  "all_feature_checks": 17,
+  "minimum_rust_default_core_checks": 14,
+  "compiler": "rustc 1.96.0 (ac68faa20 2026-05-25)\nbinary: rustc\ncommit-hash: ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96\ncommit-date: 2026-05-25\nhost: aarch64-apple-darwin\nrelease: 1.96.0\nLLVM version: 22.1.2\n",
+  "minimum_rust_compiler": "rustc 1.85.0 (4d91de4e4 2025-02-17)\nbinary: rustc\ncommit-hash: 4d91de4e48198da2e33413efdcd9cd2cc0c46688\ncommit-date: 2025-02-17\nhost: aarch64-apple-darwin\nrelease: 1.85.0\nLLVM version: 19.1.7\n",
+  "commands": [
+    [
+      "cargo",
+      "test",
+      "--release",
+      "--all-features",
+      "--all-targets",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "clippy",
+      "--all-features",
+      "--all-targets",
+      "--locked",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    [
+      "cargo",
+      "test",
+      "--release",
+      "--locked",
+      "--no-default-features",
+      "--lib",
+      "--tests"
+    ]
+  ],
+  "environment": {
+    "RUSTFLAGS": null,
+    "CARGO_ENCODED_RUSTFLAGS": null
+  },
+  "build_jobs": 1,
+  "default_normal_dependencies": 0,
+  "claim": "Framing/borrowed receive/API correctness and MSRV; no performance acceptance"
+}

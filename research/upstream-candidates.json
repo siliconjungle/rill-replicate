@@ -1,0 +1,29 @@
+{
+  "retrieved": "2026-10-22",
+  "claim": "Native Replicon full/diff staged and exhaustive 20k server-peer protocol proofs pass; no upstream engine performance comparison accepted",
+  "sources": [
+    {
+      "repository": "simgine/bevy_replicon",
+      "revision": "926dcae1106c7a87a293fd72a92d4f233e8ff183",
+      "url": "https://github.com/simgine/bevy_replicon/tree/926dcae1106c7a87a293fd72a92d4f233e8ff183",
+      "status": "actual published 0.45.2 native full/diff passes 48 direct staged,48 staged replay and12 20k server-peer exhaustive-decoder replay cases; matched performance remains pending",
+      "independence_note": null,
+      "published_proof": "evidence/native-replicon-proof-v2-receipt.json",
+      "scale_proof": "evidence/native-replay-v4-20k-audit.json"
+    },
+    {
+      "repository": "cBournhonesque/lightyear",
+      "revision": "ee50df6664338ff1eb4b3885c8525fa3c9030691",
+      "url": "https://github.com/cBournhonesque/lightyear/tree/ee50df6664338ff1eb4b3885c8525fa3c9030691",
+      "status": "discovered-and-primary-docs-reviewed; source adapter not implemented; not benchmarked",
+      "independence_note": "Current primary README states Replicon supplies world replication"
+    },
+    {
+      "repository": "naia-lib/naia",
+      "revision": "455820bce15c801518dd16537ba5a48055557942",
+      "url": "https://github.com/naia-lib/naia/tree/455820bce15c801518dd16537ba5a48055557942",
+      "status": "discovered-and-primary-docs-reviewed; source adapter not implemented; not benchmarked",
+      "independence_note": null
+    }
+  ]
+}

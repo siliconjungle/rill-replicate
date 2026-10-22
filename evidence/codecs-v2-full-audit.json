@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "processes": 6240,
+  "kind": "component",
+  "receipt_sha256": "532c4995b4f7fec5c78bd2e1bff8ae98050713cc5cdef84cbd96b2a7748594bf",
+  "runs_sha256": "50f6953f51e00c0b9d6f038dc951c7bd8322d0e037777c88482a2e540b2c3a67",
+  "source_commit": "ad4631dffe945433c2b1b9b891bba25e23733441",
+  "claim": "proof coverage only; no final performance acceptance"
+}

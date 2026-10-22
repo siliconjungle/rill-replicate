@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "processes": 48,
+  "clients": [
+    1,
+    8,
+    64,
+    512
+  ],
+  "receipt_sha256": "5c36770884d6fb224f3015aa0d581b35cbaaac24750b72ff948349a5c4352be8",
+  "runs_sha256": "24a6b83b28ea7dc94eb8636be2f1e96efac0c908b3633eceb159afcd9a70104b",
+  "claim": "native full/diff bulk routing, complete values, delayed ordered ACKs, unreliable message faults and process resource evidence; no speed acceptance"
+}

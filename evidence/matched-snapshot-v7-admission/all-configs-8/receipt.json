@@ -1,0 +1,17 @@
+{
+  "binary": "matched-snapshot-v7",
+  "binary_sha256": "f3559ee34f81add17defe1fb84ff1a7c9247f72020956eaeb7c90ef332c72cbe",
+  "build_receipt_sha256": "cacd544c8a9e42a1aba5382330b9e2dd0f45073ebc01d180b170cda180e34f20",
+  "cohorts": "research/matched-snapshot-v6-cohorts.json",
+  "cohorts_sha256": "67e46299d689524d808578791e61f67a7a7f2289dc4617f329365caed3f1741a",
+  "phase": "all-configs-8",
+  "plan_sha256": "944e7e010a5621802498d4b1fc07a63f35817d35abc0f6dfb07c426a187431b3",
+  "workers": 2,
+  "tasks": 1044,
+  "started_at": 1792644199.585278,
+  "complete": true,
+  "failures": [],
+  "claim": "Parallel development screen; no engine speed acceptance; RSS includes traces/oracle",
+  "finished_at": 1792644210.284768,
+  "runs_sha256": "afa3fdaa88f3377ab952d31be43abf7c3a01b5b41f3592f55857f931a9dca8af"
+}

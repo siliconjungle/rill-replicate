@@ -1,0 +1,41 @@
+{
+  "complete": false,
+  "source_commit": "3a7741bead596910280433a7bc3f8db15d08cb4e",
+  "inputs": {
+    "research/replicon-admission/Cargo.toml": "be01f4b0d8ebaa75d52f502b379a691870c654f1d98f3e26b42b8fbd7da519e6",
+    "research/replicon-admission/Cargo.lock": "ee5f50fdf565378aef76cbd4c9e4dc914b2df70a4e63097c763ce52385d995fe",
+    "research/replicon-admission/protocol.md": "5c9bc0ea41e293bc4e050c94a39f0b7b9fc2e9618dc9c1148a226010de3878f9",
+    "research/replicon-admission/src/main.rs": "505199c15529a0b30da3b83d578e494098a98c5a531bd9e6f591a92eb4fc6c65"
+  },
+  "command": [
+    "cargo",
+    "build",
+    "--release",
+    "--locked",
+    "--manifest-path",
+    "/Users/james/Documents/ChatGPT/3d-modelling/rill-replicate/research/replicon-admission/Cargo.toml",
+    "--message-format=json"
+  ],
+  "toolchain": "1.97.1",
+  "compiler": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: aarch64-apple-darwin\nrelease: 1.97.1\nLLVM version: 22.1.6\n",
+  "preflight": {
+    "root": "/Users/james/Documents/ChatGPT/3d-modelling/rill-replicate/research/replicon-admission",
+    "source_config": null,
+    "direct_cargo_arguments": [],
+    "prepared_outside_measurement": true
+  },
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "1.97.1",
+    "CARGO_BUILD_JOBS": "2",
+    "RUSTFLAGS": null,
+    "CARGO_ENCODED_RUSTFLAGS": null
+  },
+  "binary": "build/native-replicon-proof-v1",
+  "binary_sha256": "88704a058ef65a8fedc658647442e68549646ad1dba8e6fecc53cd3dba41c546",
+  "build_output_sha256": "ef65d957fb11f4bbe377cd4e757a0ba178c845e36cb47a457fa6b8a039f23f4e",
+  "build_log_sha256": "db073818ee343e803727ffd505942b2c27966062c682b273fe90a689e93185e6",
+  "proof_log_sha256": "7ccab18c47993b65ee54495e82f1a9907ba475dea7a07a4bd41e35d43847033c",
+  "returncode": 101,
+  "rows": [],
+  "claim": "Four-client native engine capability proof only; no 20k scaling or speed comparison"
+}

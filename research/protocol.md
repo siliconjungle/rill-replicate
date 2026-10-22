@@ -31,6 +31,21 @@ full messages are also reused in shared modes. Compare at two bounded history
 windows (4, 16) and two cache capacities (0, 64), 16 configurations. No per-case
 oracle selection or hiding unfavorable results. A cache miss remains correct.
 
+Before first timing, add a codec factor: ordered index/value pairs versus changed
+bitmask/value stream over a 256-word vector, producing 32 fixed configurations.
+The map model separately checks membership removal/reinsertion. The vector fixture
+has fixed membership. It records per-peer lag each tick and forces a final full
+refresh to prove convergence. Header framing is absent; reported bytes are bodies.
+Sender timings sum publication, prepare and ACK/resync calls, including timer call
+overhead. Wall time includes receiver decoding, full equality checks and fixture
+work, excluding initial registration. Setup cost is not yet compared. No sustained
+latency/capacity inference is permitted from this development fixture.
+
+Also before first timing, add an optimized shared-full control (fifth policy),
+giving **40 fixed configurations**. Otherwise an apparent delta/sharing advantage
+could merely be repeated full serialization in a naive baseline. Cache-disabled
+controls remain present, even where they duplicate another policy's behavior.
+
 First development fixtures: 20,000 simulated recipients, 256 u64 records, at least
 32 revisions, sparse (1 record) and dense changes, synchronized and staggered ACK
 baselines, deterministic packet loss, ACK loss, duplication, reverse delivery,
@@ -63,3 +78,13 @@ equivalent applicable semantics. A source catalog is not a list of beaten engine
 
 Source inspection and exact version pins remain open. No dependency or source
 from private Nocturne is needed for the public library.
+
+## Byte-codec admission discovered before timing
+
+Pinned bidiff 1.0.0/sacapart 2.0.0 panics when its source is empty. Preserve the
+native capability probe rather than treating this as a speed loss or hiding it.
+The compatibility adapter emits explicit full replacement for empty bidiff
+sources. Every adapter carries the same one-byte delta/full tag, inside optional
+LZ4 compression. There is no empty-source bypass for other native algorithms.
+Names bidiff-default/single denote those explicit compatibility adapters, not a
+claim that the native library independently implements the replication contract.

@@ -1,0 +1,64 @@
+   Compiling cdivsufsort v2.0.0
+   Compiling suffix_array v0.5.0
+   Compiling qbsdiff v1.4.4
+   Compiling rill-replicate v0.1.0 (/Users/james/Documents/ChatGPT/3d-modelling/rill-replicate)
+    Finished `release` profile [optimized] target(s) in 15.38s
+     Running unittests src/lib.rs (target/release/deps/rill_replicate-233a51d2bb368817)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/bytes.rs (target/release/deps/bytes-f2c7864a21668f18)
+
+running 2 tests
+test malformed_patch_and_output_limits ... ok
+test all_run_configs_exact_variable_size_model ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/contracts.rs (target/release/deps/contracts-6289036fd94559de)
+
+running 9 tests
+test cached_bodies_reclaim_and_invalid_envelopes_preserve_receiver ... ok
+test dense_adaptive_chooses_full_and_sparse_shares_delta ... ok
+test encoding_failure_does_not_create_an_attempt ... ok
+test malformed_codec_inputs_do_not_allocate_from_untrusted_counts ... ok
+test exact_attempt_ack_session_and_monotonic_baseline ... ok
+test sharing_fallback_and_bounds ... ok
+test missing_baseline_decode_failure_resync_and_late_packets ... ok
+test stalled_peer_does_not_pin_application_history ... ok
+test deterministic_loss_reordering_delete_reinsert_model_all_policies ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/wire.rs (target/release/deps/wire-5df7e464970338fd)
+
+running 3 tests
+test all_integer_edges_and_borrowed_slice_identity ... ok
+test malformed_headers_and_ack_streams_fail_without_copying ... ok
+test every_policy_framed_borrowed_apply_exact_attempt_ack_and_session ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/byte_fanout.rs (target/release/examples/byte_fanout-ccfaca06df49faa1)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples/codec.rs (target/release/examples/codec-026910b180b6e588)
+
+running 2 tests
+test tests::native_bidiff_empty_source_capability_requires_fallback ... ok
+test tests::every_codec_matches_variable_length_model ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.35s
+
+     Running unittests examples/fanout.rs (target/release/examples/fanout-d6d32ff08b0d0c62)
+
+running 1 test
+test tests::both_codecs_exact_across_lengths_and_invalid_bytes ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

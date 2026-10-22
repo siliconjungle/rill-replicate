@@ -1,0 +1,91 @@
+{
+  "kind": "preregistered-matched-snapshot-boundary-development-v6",
+  "date": "2026-10-22",
+  "purpose": "Compare complete generic snapshot replication boundaries; retain every loss. Native authored-diff is a different input contract and remains separate.",
+  "native": "bevy_replicon=0.45.2 / bevy=0.20.0 native full component replacement",
+  "compiler": "same Rust 1.97.1, same binary and release profile for all engines",
+  "application": "Dataset { revision: u64, bytes: Vec<u8> }, exact postcard serialization includes application revision; one complete dataset per scope",
+  "rill_input": "serialize snapshot once on publication, charged to publication; standard generic Sender<Vec<u8>,Adapter> and Receiver with complete framed contiguous messages",
+  "rill_strategies": [
+    "full",
+    "shared-full",
+    "individual",
+    "shared",
+    "adaptive"
+  ],
+  "rill_codecs": [
+    "full",
+    "runs-b1-g0",
+    "runs-b1-g4",
+    "runs-b1-g16",
+    "runs-b1-g64",
+    "runs-b4-g0",
+    "runs-b4-g4",
+    "runs-b4-g16",
+    "runs-b4-g64",
+    "runs-b8-g0",
+    "runs-b8-g4",
+    "runs-b8-g16",
+    "runs-b8-g64",
+    "runs-b16-g0",
+    "runs-b16-g4",
+    "runs-b16-g16",
+    "runs-b16-g64",
+    "runs-b64-g0",
+    "runs-b64-g4",
+    "runs-b64-g16",
+    "runs-b64-g64",
+    "bsdiff",
+    "qbsdiff-default",
+    "qbsdiff-small",
+    "bidiff-default",
+    "bidiff-single"
+  ],
+  "compression_variants": [
+    "plain",
+    "lz4"
+  ],
+  "cases": [
+    "sparse",
+    "dense",
+    "random",
+    "shift",
+    "resize"
+  ],
+  "sizes": [
+    64,
+    2048
+  ],
+  "traces": [
+    "sync",
+    "loss"
+  ],
+  "ack_delays": [
+    0,
+    4,
+    24
+  ],
+  "frames": 32,
+  "seed": 4815162342,
+  "rill_config": {
+    "history": 16,
+    "receiver_history": 16,
+    "attempts_per_peer": 64,
+    "cache_entries": 64,
+    "cache_bytes": 8388608
+  },
+  "policy": "Prepare unacknowledged current state each tick, suppress when current revision acknowledged; initial complete state reliable, later data unreliable; ACKs reliable FIFO. Native engine uses its native retry/change detection policy.",
+  "faults": "Same logical peer/tick schedule on mutation messages: drop modulo11, hold3 ticks modulo13, duplicate modulo17; reliable messages preserved.",
+  "clock_ns": 16666667,
+  "boundaries": {
+    "publication_ns": "Snapshot serialization/publication, or native component replacement; includes per-engine input work, excludes common model construction.",
+    "server_step_ns": "Process queued wire ACKs, native server scheduling or Rill recipient traversal, encoding, complete app-message construction and export into common packet queue. Includes Rill header/body assembly, native entity/channel metadata. Excludes common fault/oracle trace storage.",
+    "ack_ingest_ns": "Queue actual predicted ACK message into engine inbox, combined with next server step for actual ACK decode/processing.",
+    "receiver_step_ns": "Native decoder/client update and emitted response drain, or Rill wire decode, payload reconstruction, postcard Dataset decode and ACK encoding. Full model comparison outside timer.",
+    "setup_ns": "Connection/protocol setup separately recorded; native hash handshake not repeated for Rill transport-owned session.",
+    "process_rss": "Whole fixture including retained traces and oracle, not library-only memory."
+  },
+  "verification": "Every server peer coexists. Sequential fresh actual receivers replay all messages, exact ACK bytes checked, complete dataset checked every logical step, acknowledged target applied by server delivery, final convergence. No sampled peers; no injected client state.",
+  "staging": "Required correctness/resource evidence first at 1/8/64 recipients; 20k cases after staging. Parallel exploratory screens are not final confidence intervals. Enumerated parameter grid is candidate space, not claim every Cartesian combination was executed.",
+  "acceptance": "No all-engine winner or production latency claim from this development study. Native framing covers extra ECS metadata/capabilities; feature differences remain reported. Equal app snapshot input, logical schedule and counting boundaries do not imply identical general engine capabilities."
+}
