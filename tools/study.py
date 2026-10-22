@@ -47,7 +47,7 @@ def freeze(label, example='fanout', features=None):
     receipt = {
         'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         'inputs': inputs, 'compiler': subprocess.check_output(['rustc', '+stable', '-Vv'], text=True),
-        'command': args, 'environment': {k: env.get(k) for k in ['RUSTUP_TOOLCHAIN', 'CARGO_BUILD_JOBS', 'RUSTFLAGS', 'CARGO_ENCODED_RUSTFLAGS']},
+        'command': args, 'environment': {k: env.get(k) for k in ['RUSTUP_TOOLCHAIN', 'CARGO_BUILD_JOBS', 'RUSTFLAGS', 'CARGO_ENCODED_RUSTFLAGS', 'RAYON_NUM_THREADS']},
         'preflight': json.loads(preflight), 'binary': str(binary.relative_to(ROOT)),
         'binary_sha256': digest(binary), 'build_log_sha256': digest(log),
         'machine': subprocess.check_output(['uname', '-a'], text=True).strip(),
