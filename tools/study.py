@@ -23,7 +23,8 @@ def bindings():
     paths = [ROOT / 'Cargo.toml', ROOT / 'Cargo.lock']
     for directory in ['src', 'tests', 'examples', 'tools', 'research']:
         paths += sorted((ROOT / directory).rglob('*.rs' if directory in ['src', 'tests', 'examples'] else '*'))
-    return {str(p.relative_to(ROOT)): digest(p) for p in paths if p.is_file() and '__pycache__' not in str(p)}
+    generated={'target','build','evidence','__pycache__','.git'}
+    return {str(p.relative_to(ROOT)): digest(p) for p in paths if p.is_file() and not generated.intersection(p.relative_to(ROOT).parts)}
 
 
 def freeze(label, example='fanout', features=None):

@@ -50,3 +50,36 @@ snapshots; the adaptive policy avoids that expansion by also encoding/comparing
 full state. That extra work is charged. Shared full remains a strong sender-time control.
 All other profiles and losses remain in the machine-readable review. No fixed
 policy dominates all metrics, and no upstream replication engine is yet admitted.
+
+## Byte-codec admission, second frozen baseline
+
+The normal library still has zero dependencies. An opt-in `bytes::ByteRuns` codec
+now supports arbitrary byte payloads and size changes with a checked decode-output
+limit. Twenty fixed block/gap configurations are explored. The comparison-only
+feature adds actual pinned bsdiff 0.2.1, qbsdiff 1.4.4, bidiff/bipatch 1.0.0 and an
+LZ4 wrapper. Default and tuned native parameters remain separate configurations.
+These are **three delta algorithm families**, not 52 replication engines.
+
+All 52 combinations (40 run configurations including LZ4, ten upstream codec
+configurations, two full controls) passed 520 component smoke processes and the
+**6,240-process full component grid**. Complete reconstructed bytes and matching
+trace checksums are verified, including empty, sparse, dense, random, shifted and
+resized payloads. The actual adapter path through Rill's Sender/Receiver passed
+36 small-recipient processes. Its corresponding 36-process 20k study is running.
+
+Fourteen checks now pass across contract/model/codec tests. All-target/all-feature
+Clippy passes. Pinned bidiff panics on an empty source; the retained native probe
+shows this and its explicit compatibility adapter sends a tagged full replacement.
+All adapters pay the same delta/full tag. Nothing treats the native panic as a
+speed win. Default qbsdiff and its explicitly tuned small-buffer version remain
+separate, so a poor untuned parameter is not the only external comparison.
+
+`byte-codec-v2-review.json` retains every cell median and fixed candidate/external
+comparison, including encoding, decoding and size losses. **No fixed run candidate
+has lower observed encoding medians in every external cell.** These parallel
+component medians are not confidence intervals or a full-engine comparison.
+
+An actual Replicon 0.45.2/Bevy 0.20.0 fixture is being admitted using a separate
+Rust 1.97.1 toolchain. Current engine proofs, timing fairness and 20k native-engine
+scaling remain open. The source-discovery catalog explicitly separates algorithms,
+replication engines and support packages; metadata discovery is not admission.

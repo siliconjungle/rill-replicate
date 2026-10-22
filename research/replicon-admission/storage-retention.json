@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "state": "required actual upstream replication admission proof; no timing acceptance",
+  "keep": [
+    {
+      "path": "Cargo.toml",
+      "reason": "Minimal source/lock/protocol reproduction input for actual upstream engine admission"
+    },
+    {
+      "path": "Cargo.lock",
+      "reason": "Minimal source/lock/protocol reproduction input for actual upstream engine admission"
+    },
+    {
+      "path": "src",
+      "reason": "Minimal source/lock/protocol reproduction input for actual upstream engine admission"
+    },
+    {
+      "path": "protocol.md",
+      "reason": "Minimal source/lock/protocol reproduction input for actual upstream engine admission"
+    },
+    {
+      "path": "storage-retention.json",
+      "reason": "Minimal source/lock/protocol reproduction input for actual upstream engine admission"
+    }
+  ],
+  "safe_to_remove": []
+}

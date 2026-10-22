@@ -30,6 +30,9 @@ layouts, two history windows and two cache limits. The demonstration
 separately recording sender time, encoded/transmitted body bytes, lag, cache reuse,
 missing baselines and fallback. It uses simulated recipients, not sockets.
 Upstream Replicon, Lightyear and Naia are research candidates, not defeated engines.
+The optional `comparisons` feature admits actual binary-delta codecs separately;
+`bytes::ByteRuns` is an opt-in generic byte codec with a configurable output limit.
+The second study compares 52 codec combinations. None is an accepted winner.
 
 ```sh
 RUSTUP_TOOLCHAIN=stable cargo test --release --all-targets --locked

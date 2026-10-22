@@ -1,0 +1,16 @@
+{
+  "kind": "component",
+  "claim": "development-only; upstream codec adapters do not count as independent replication engines",
+  "plan_sha256": "63cb247cfb822e2967b930a479c5c3046b3fb110ab440464176f61c2c2baa55d",
+  "build_receipt_sha256": "85de6d5ad6a7a756b39b2069b936d2c48dbf7f261a260c8c98f6a5f072c0dd11",
+  "binary": "codec-v2",
+  "binary_sha256": "621ec39a3b30647010fef87a409ef90438ad51deee4088a4874ea98bebca5c1e",
+  "smoke": true,
+  "tasks": 520,
+  "workers": 2,
+  "complete": true,
+  "failures": [],
+  "started_at": 1792641126.741749,
+  "finished_at": 1792641128.926264,
+  "runs_sha256": "aa9e3f7c7e3bb29b7c790863348f43b84e35159949d8abbd21b1c1d45220a6fc"
+}
