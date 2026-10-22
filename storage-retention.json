@@ -83,6 +83,10 @@
     {
       "path": "evidence/clippy-v2.log",
       "reason": "Completed intermediate validation superseded by contracts-v4/clippy-v3 after adding shared-full control"
+    },
+    {
+      "path": "evidence/fanout-v1-freeze.log",
+      "reason": "Completed duplicate console rendering of selected structured fanout-v1-build.json; canonical build log and receipt retained"
     }
   ]
 }
