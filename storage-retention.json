@@ -135,6 +135,26 @@
     {
       "path": "evidence/replicon-build-v1.log",
       "reason": "Completed untimed initial dependency build superseded by frozen native proof v1/v2 artifact receipts/logs and source/lock/compiler bindings"
+    },
+    {
+      "path": "evidence/native-scale-preflight-v3.json",
+      "reason": "Completed initial bulk-router compile/smoke attempt; selected frozen native-scale-v3 receipt and full staged proof/resource study supersede these unbound intermediate observations"
+    },
+    {
+      "path": "evidence/native-scale-build-v3.jsonl",
+      "reason": "Completed initial bulk-router compile/smoke attempt; selected frozen native-scale-v3 receipt and full staged proof/resource study supersede these unbound intermediate observations"
+    },
+    {
+      "path": "evidence/native-scale-build-v3.log",
+      "reason": "Completed initial bulk-router compile/smoke attempt; selected frozen native-scale-v3 receipt and full staged proof/resource study supersede these unbound intermediate observations"
+    },
+    {
+      "path": "evidence/native-scale-local-smoke-v3.log",
+      "reason": "Completed initial bulk-router compile/smoke attempt; selected frozen native-scale-v3 receipt and full staged proof/resource study supersede these unbound intermediate observations"
+    },
+    {
+      "path": "evidence/native-scale-local-diff-v3.log",
+      "reason": "Completed initial bulk-router compile/smoke attempt; selected frozen native-scale-v3 receipt and full staged proof/resource study supersede these unbound intermediate observations"
     }
   ]
 }

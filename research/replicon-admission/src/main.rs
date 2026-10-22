@@ -1,34 +1,10 @@
 //! Actual upstream server/client serialization and decoding; capability proof only.
+mod common;
 use bevy::{prelude::*, state::app::StatesPlugin};
 use bevy_replicon::{
     prelude::*, shared::backend::channels::ServerChannel, test_app::ServerTestAppExt,
 };
-use serde::{Deserialize, Serialize};
-
-#[derive(Component, Clone, Debug, Serialize, Deserialize, PartialEq, Eq)]
-struct Dataset {
-    revision: u64,
-    bytes: Vec<u8>,
-}
-#[derive(Clone, Debug, Serialize, Deserialize)]
-struct Change {
-    revision: u64,
-    edits: Vec<(usize, u8)>,
-}
-impl Diffable for Dataset {
-    type Diff = Change;
-    const HISTORY_LEN: usize = 16;
-    fn apply_diff(&mut self, change: &Change) -> Result<()> {
-        if change.revision != self.revision + 1 {
-            return Err("noncontiguous application diff".into());
-        }
-        for &(index, value) in &change.edits {
-            self.bytes[index] = value;
-        }
-        self.revision = change.revision;
-        Ok(())
-    }
-}
+use common::{Change, Dataset};
 
 fn app(diff: bool) -> App {
     let mut app = App::new();
@@ -45,6 +21,7 @@ fn app(diff: bool) -> App {
     app.finish();
     app
 }
+
 fn send(server: &mut App, clients: &mut [App]) {
     // Upstream test helper is fine for small proofs. Its retain-sent scan is not
     // suitable for an eventual 20k performance harness; use bulk routing there.

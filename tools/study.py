@@ -27,27 +27,32 @@ def bindings():
     return {str(p.relative_to(ROOT)): digest(p) for p in paths if p.is_file() and not generated.intersection(p.relative_to(ROOT).parts)}
 
 
-def freeze(label, example='fanout', features=None):
+def freeze(label, example='fanout', features=None, manifest=None, binary_name=None, toolchain='stable'):
     binary = ROOT / 'build' / label
     if binary.exists():
         raise RuntimeError('Frozen binary already exists')
     if subprocess.check_output(['git', 'status', '--porcelain', '--untracked-files=no'], cwd=ROOT).strip():
         raise RuntimeError('Commit source first')
     inputs = bindings()
-    preflight = subprocess.check_output(['ink-cache', 'prepare-sources', str(ROOT), '--offline'], cwd=ROOT, text=True)
-    env = dict(os.environ, RUSTUP_TOOLCHAIN='stable', CARGO_BUILD_JOBS='1')
-    args = ['cargo', 'build', '--release', '--locked', '--example', example]
+    env = dict(os.environ, RUSTUP_TOOLCHAIN=toolchain, CARGO_BUILD_JOBS='1')
+    project = (ROOT/manifest).parent if manifest else ROOT
+    preflight = subprocess.check_output(['ink-cache', 'prepare-sources', str(project), '--offline'], cwd=ROOT, env=env, text=True)
+    args = ['cargo', 'build', '--release', '--locked']
+    args += ['--bin',binary_name] if binary_name else ['--example',example]
+    if manifest:
+        args += ['--manifest-path',str(ROOT/manifest)]
     if features:
         args += ['--features', features]
     log = ROOT / 'evidence' / f'{label}-build.log'
     with log.open('w') as output:
         subprocess.run(args, cwd=ROOT, env=env, stdout=output, stderr=subprocess.STDOUT, check=True)
     binary.parent.mkdir(exist_ok=True)
-    shutil.copy2(ROOT / 'target/release/examples' / example, binary)
+    artifact = project/'target/release'/binary_name if binary_name else project/'target/release/examples'/example
+    shutil.copy2(artifact, binary)
     assert inputs == bindings(), 'Inputs changed during build'
     receipt = {
         'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
-        'inputs': inputs, 'compiler': subprocess.check_output(['rustc', '+stable', '-Vv'], text=True),
+        'inputs': inputs, 'compiler': subprocess.check_output(['rustc', f'+{toolchain}', '-Vv'], text=True),
         'command': args, 'environment': {k: env.get(k) for k in ['RUSTUP_TOOLCHAIN', 'CARGO_BUILD_JOBS', 'RUSTFLAGS', 'CARGO_ENCODED_RUSTFLAGS', 'RAYON_NUM_THREADS']},
         'preflight': json.loads(preflight), 'binary': str(binary.relative_to(ROOT)),
         'binary_sha256': digest(binary), 'build_log_sha256': digest(log),
@@ -106,13 +111,14 @@ if __name__ == '__main__':
     sub = parser.add_subparsers(dest='action', required=True)
     f = sub.add_parser('freeze'); f.add_argument('label')
     f.add_argument('--example',default='fanout'); f.add_argument('--features')
+    f.add_argument('--manifest'); f.add_argument('--bin'); f.add_argument('--toolchain',default='stable')
     s = sub.add_parser('run')
     s.add_argument('--binary', required=True); s.add_argument('--label', required=True)
     s.add_argument('--peers', type=int, default=20_000); s.add_argument('--frames', type=int, default=32)
     s.add_argument('--workers', type=int, default=2)
     s.add_argument('--cases', nargs='+', choices=['sync','staggered','loss','dense'], default=['sync','staggered','loss','dense'])
     a = parser.parse_args()
-    if a.action == 'freeze': freeze(a.label,a.example,a.features)
+    if a.action == 'freeze': freeze(a.label,a.example,a.features,a.manifest,a.bin,a.toolchain)
     else:
         assert a.workers>0 and a.peers>0 and a.frames>=32 and len(set(a.cases))==len(a.cases)
         study(a)
