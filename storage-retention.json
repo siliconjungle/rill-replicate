@@ -87,6 +87,10 @@
     {
       "path": "evidence/fanout-v1-freeze.log",
       "reason": "Completed duplicate console rendering of selected structured fanout-v1-build.json; canonical build log and receipt retained"
+    },
+    {
+      "path": "target",
+      "reason": "Completed compiler staging for selected fanout-v1 baseline and validated source. Frozen executable, compiler/source/lock/flags bindings and final proof logs are retained; no active build consumes this output."
     }
   ]
 }
