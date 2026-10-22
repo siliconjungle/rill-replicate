@@ -89,6 +89,10 @@
     {
       "path": "build/native-replay-v4",
       "reason": "Selected exhaustive native decoder/ACK replay and simultaneous server-peer baseline with fixed virtual time"
+    },
+    {
+      "path": "build/matched-snapshot-v6",
+      "reason": "Selected required matched snapshot native/Rill complete-message development proof and timing baseline; exact compiler/source/lock bindings retained"
     }
   ],
   "safe_to_remove": [
@@ -167,6 +171,14 @@
     {
       "path": "evidence/native-replay-local-smoke-v4.log",
       "reason": "Completed initial 8-peer replay compile/probe; superseded by selected frozen v4 staged proof and input bindings"
+    },
+    {
+      "path": "evidence/matched-snapshot-v6-local-build.log",
+      "reason": "Initial untimed compile validation; retire after selected frozen v6 source-bound build and correctness study supersede it"
+    },
+    {
+      "path": "evidence/matched-snapshot-v6-local-smoke.json",
+      "reason": "Initial untimed adapter smoke; retire after selected frozen v6 complete source-bound cohort supersedes it"
     }
   ]
 }
