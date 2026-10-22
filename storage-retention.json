@@ -85,6 +85,10 @@
     {
       "path": "build/native-scale-v3",
       "reason": "Selected native bulk routing and scale admission baseline with full source/lock/compiler bindings"
+    },
+    {
+      "path": "build/native-replay-v4",
+      "reason": "Selected exhaustive native decoder/ACK replay and simultaneous server-peer baseline with fixed virtual time"
     }
   ],
   "safe_to_remove": [
