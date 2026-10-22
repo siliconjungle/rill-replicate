@@ -1,0 +1,90 @@
+{
+  "complete": true,
+  "source_commit": "10c9f6fadaa08fee1877e5747d0fcf9c0a2e64e3",
+  "inputs": {
+    "research/replicon-admission/Cargo.toml": "be01f4b0d8ebaa75d52f502b379a691870c654f1d98f3e26b42b8fbd7da519e6",
+    "research/replicon-admission/Cargo.lock": "ee5f50fdf565378aef76cbd4c9e4dc914b2df70a4e63097c763ce52385d995fe",
+    "research/replicon-admission/protocol.md": "f59e128edf57f89a645eb259cdd4b7274c75ac5885fb688fb69559199bbcd8c3",
+    "research/replicon-admission/src/main.rs": "4e24d1459b8421f612d103d5f09d6b23d3bb00adb53e9ad6abc935e3e5f8014c"
+  },
+  "command": [
+    "cargo",
+    "build",
+    "--release",
+    "--locked",
+    "--manifest-path",
+    "/Users/james/Documents/ChatGPT/3d-modelling/rill-replicate/research/replicon-admission/Cargo.toml",
+    "--message-format=json"
+  ],
+  "toolchain": "1.97.1",
+  "compiler": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: aarch64-apple-darwin\nrelease: 1.97.1\nLLVM version: 22.1.6\n",
+  "preflight": {
+    "root": "/Users/james/Documents/ChatGPT/3d-modelling/rill-replicate/research/replicon-admission",
+    "source_config": null,
+    "direct_cargo_arguments": [],
+    "prepared_outside_measurement": true
+  },
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "1.97.1",
+    "CARGO_BUILD_JOBS": "2",
+    "RUSTFLAGS": null,
+    "CARGO_ENCODED_RUSTFLAGS": null
+  },
+  "binary": "build/native-replicon-proof-v2",
+  "binary_sha256": "5ee234bd59ee19e1df3c461d418ef386737381c3b13dc5c701753d8017f03643",
+  "build_output_sha256": "e6e6eab5aa92abc5976e08e364d3adad6163ad822529e8bd2650d89c05971a56",
+  "build_log_sha256": "69aabbafd28c2e81d956161b3108c4096820001cff7082d50403b4abb8c0996e",
+  "proof_log_sha256": "9779027fae40b87142b0601b773ac41953ad6d9562de51e3883e9570eb39d7c1",
+  "returncode": 0,
+  "rows": [
+    {
+      "engine": "bevy_replicon-0.45.2",
+      "native_diff": false,
+      "loss": false,
+      "clients": 4,
+      "revisions": 32,
+      "dropped_mutations": 0,
+      "complete_values": true,
+      "despawn_reinsert": true,
+      "reconnect": true,
+      "timing_eligible": false
+    },
+    {
+      "engine": "bevy_replicon-0.45.2",
+      "native_diff": false,
+      "loss": true,
+      "clients": 4,
+      "revisions": 32,
+      "dropped_mutations": 24,
+      "complete_values": true,
+      "despawn_reinsert": true,
+      "reconnect": true,
+      "timing_eligible": false
+    },
+    {
+      "engine": "bevy_replicon-0.45.2",
+      "native_diff": true,
+      "loss": false,
+      "clients": 4,
+      "revisions": 32,
+      "dropped_mutations": 0,
+      "complete_values": true,
+      "despawn_reinsert": true,
+      "reconnect": true,
+      "timing_eligible": false
+    },
+    {
+      "engine": "bevy_replicon-0.45.2",
+      "native_diff": true,
+      "loss": true,
+      "clients": 4,
+      "revisions": 32,
+      "dropped_mutations": 24,
+      "complete_values": true,
+      "despawn_reinsert": true,
+      "reconnect": true,
+      "timing_eligible": false
+    }
+  ],
+  "claim": "Four-client native engine capability proof only; no 20k scaling or speed comparison"
+}

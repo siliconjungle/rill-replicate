@@ -81,7 +81,15 @@ comparison, including encoding, decoding and size losses. **No fixed run candida
 has lower observed encoding medians in every external cell.** These parallel
 component medians are not confidence intervals or a full-engine comparison.
 
-An actual Replicon 0.45.2/Bevy 0.20.0 fixture is being admitted using a separate
-Rust 1.97.1 toolchain. Current engine proofs, timing fairness and 20k native-engine
-scaling remain open. The source-discovery catalog explicitly separates algorithms,
+An actual Replicon 0.45.2/Bevy 0.20.0 fixture passed **four native scenarios**
+using a separate Rust 1.97.1 toolchain: full/native-diff replication × loss/no-loss,
+each with four real client Apps, 32 complete dataset revisions, despawn/reinsert
+and fresh-receiver reconnect. Native serialized messages go through actual client
+decoders. The first fixture reused a client App after disconnect and found retained
+entities; native reset intentionally preserves entity data. Its negative probe is
+retained, and v2 uses a fresh receiver incarnation, matching Rill Sessions.
+See evidence/native-replicon-proof-v2-receipt.json. These are component-container
+capability proofs, not the separate resource path or a performance comparison.
+Timing fairness, native ACK-delay/reordering/history-expiry coverage, alternate
+engine adapters and 20k native-engine scaling remain open. The source-discovery catalog explicitly separates algorithms,
 replication engines and support packages; metadata discovery is not admission.

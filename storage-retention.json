@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "state": "required Replicate implementation and proof work; 100 GB reserve unmet (~43 GiB free); active State workers untouched",
+  "state": "required ongoing Replicate comparison and native admission; ~42 GiB free, 100 GB reserve unmet; existing workers untouched",
   "keep": [
     {
       "path": ".git",
@@ -77,6 +77,10 @@
     {
       "path": "build/native-replicon-proof-v2",
       "reason": "Selected native upstream engine proof with explicit fresh receiver/session reconnect policy"
+    },
+    {
+      "path": "target",
+      "reason": "Single shared compiler staging cache for ongoing required generic codec and replication adapter variants; no copied experiment dependency trees"
     }
   ],
   "safe_to_remove": [
@@ -119,6 +123,14 @@
     {
       "path": "evidence/byte-codec-clippy-v1.log",
       "reason": "Completed intermediate compile/lint/model attempt superseded by final byte-codec-tests-v4/clippy-v2 and focused native-bidiff-empty proof; source history and registered inputs retained"
+    },
+    {
+      "path": "evidence/replicon-build-v1.jsonl",
+      "reason": "Completed untimed initial dependency build superseded by frozen native proof v1/v2 artifact receipts/logs and source/lock/compiler bindings"
+    },
+    {
+      "path": "evidence/replicon-build-v1.log",
+      "reason": "Completed untimed initial dependency build superseded by frozen native proof v1/v2 artifact receipts/logs and source/lock/compiler bindings"
     }
   ]
 }
