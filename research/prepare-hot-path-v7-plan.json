@@ -1,0 +1,77 @@
+{
+  "kind": "registered-prepare-hot-path-v7",
+  "date": "2026-10-22",
+  "baseline_binary": "build/matched-snapshot-v6",
+  "baseline_source": "870849755e3e841c741be283c605efa49bd1cf77",
+  "reason": "Sender.prepare repeatedly scans contiguous revision history and hashes the same cache key twice for cache hits; avoid those costs without changing protocol or fixed policy.",
+  "changes": [
+    "Use bounded contiguous sender revision arithmetic for retained-baseline membership and direct VecDeque indexing for a cache miss, instead of one or two linear scans. Receiver history may have gaps and is deliberately not changed.",
+    "Read encoded-cache hit with one HashMap.get rather than contains_key plus indexing.",
+    "Skip sender history membership work in full-only policies; preserve non-full expired-baseline statistics."
+  ],
+  "invariants": [
+    "Published sender revisions are strictly consecutive from zero and oldest-only eviction preserves a contiguous window.",
+    "Only exact live attempt ACKs establish baselines. Invalid or expired baselines fall back to full.",
+    "No changes to codec, cache limits, framing, ACK queues, receiver state or application snapshot inputs."
+  ],
+  "proof": [
+    "Existing contracts/codec/framing tests and full feature Clippy on existing supported toolchain.",
+    "Source-bound 8-recipient replays for every 261 fixed policy/codec configuration at sparse/loss/ACK24 and random/sync/ACK0, sizes64/2048, matching v6 all-configs cohort.",
+    "Matched 20k paired fresh-process v6/v7 observations for fixed candidates; all losses retained, no final significance/capacity acceptance while other workers are active."
+  ],
+  "paired_candidates": [
+    [
+      "rill",
+      "shared-full",
+      "full"
+    ],
+    [
+      "rill",
+      "shared",
+      "runs-b8-g4"
+    ],
+    [
+      "rill",
+      "adaptive",
+      "runs-b8-g4"
+    ]
+  ],
+  "paired_profiles": [
+    [
+      "sparse",
+      "sync",
+      0
+    ],
+    [
+      "sparse",
+      "loss",
+      4
+    ],
+    [
+      "sparse",
+      "loss",
+      24
+    ],
+    [
+      "dense",
+      "sync",
+      0
+    ],
+    [
+      "random",
+      "loss",
+      4
+    ],
+    [
+      "resize",
+      "loss",
+      24
+    ]
+  ],
+  "paired_peers": 20000,
+  "paired_size": 2048,
+  "paired_repetitions": 3,
+  "random_seed": 20261022,
+  "workers": 2,
+  "claim": "Exploratory optimization; not a winning universal default or proof of beating every upstream engine."
+}
