@@ -1,0 +1,82 @@
+{
+  "retrieved": "2026-10-22",
+  "packages": [
+    {
+      "name": "bsdiff",
+      "version": "0.2.1",
+      "checksum": "b6709158fe6ca66c1f32eb27b4ae5997c67b0df350ae185831233af3e7a91213",
+      "rust_version": "1.59",
+      "source": "https://static.crates.io/crates/bsdiff/bsdiff-0.2.1.crate",
+      "archive_bytes": 6068,
+      "inspected_files": {
+        "Cargo.toml": "8a835a9a600ded1c6505b170f1ba78c65226393d89a1e4359503557201dc745e",
+        "src/lib.rs": "db0f9382621da3a68d8a87d251e7cd955428dcc5820da863c48ec6b121878efe"
+      }
+    },
+    {
+      "name": "qbsdiff",
+      "version": "1.4.4",
+      "checksum": "fdc7f24528be166f08f2c7becaca5618865499b6ded2565d5afcd795cc0d7596",
+      "rust_version": null,
+      "source": "https://static.crates.io/crates/qbsdiff/qbsdiff-1.4.4.crate",
+      "archive_bytes": 22090,
+      "inspected_files": {
+        "Cargo.toml": "ed677b3122c6238af5910b859e21dbdbbe1dd814bb8af40fda0113eb30df4211",
+        "src/bsdiff.rs": "659dd07f31e820e9eb52450651d9a9b4097b7fcf937d0e3fa17561b53592ddbc",
+        "src/bspatch.rs": "41f2bb59b0f213b6fff172115f45f43371dd07c37cb31f9c03c5c8e1e4cbf768",
+        "src/lib.rs": "9976baac31e0909b1406f7900c5ef2c421ec484f5c0cf2c7e9ea0eacc16532ea"
+      }
+    },
+    {
+      "name": "bidiff",
+      "version": "1.0.0",
+      "checksum": "ae58bd32799998ad11ed44ebd9f440a129352883ca082a836d073d8e15d8a9be",
+      "rust_version": null,
+      "source": "https://static.crates.io/crates/bidiff/bidiff-1.0.0.crate",
+      "archive_bytes": 6322,
+      "inspected_files": {
+        "Cargo.toml": "290f6f242995b1ce90b1dbc23d2975b975c80433537bfa25b39c2eacebd40112",
+        "src/enc.rs": "e39d98c2a0686acde85b5b3c92910c2420e64ab3154718a1580732905283d35c",
+        "src/lib.rs": "b25c52238650a7582375d21e38bbaada4114a1713d2cea1d5263383fad404bf5"
+      }
+    },
+    {
+      "name": "bipatch",
+      "version": "1.0.0",
+      "checksum": "2f9d63c1d134f28c2ca5f677dddf1a2254ae443f01238eeb960ee5b8b9352257",
+      "rust_version": null,
+      "source": "https://static.crates.io/crates/bipatch/bipatch-1.0.0.crate",
+      "archive_bytes": 2091,
+      "inspected_files": {
+        "Cargo.toml": "2ee6098c190e47c4dbe535a8bf5332a253666a329874144a35c2aef6a99b057f",
+        "src/lib.rs": "c930c6e5564b116037d59780d8123a7839981bcc962cf752785a4b9b53de5732"
+      }
+    },
+    {
+      "name": "lz4_flex",
+      "version": "0.14.0",
+      "checksum": "ecbdfe44b1bd960b68170b417450a628c43f7cf56bb3c5317e61cb230ee7f226",
+      "rust_version": "1.81",
+      "source": "https://static.crates.io/crates/lz4_flex/lz4_flex-0.14.0.crate",
+      "archive_bytes": 45637,
+      "inspected_files": {
+        "Cargo.toml": "efdd72c2f1dbf2967c6ce36371e48950c50daddd1fa1634467d362a9224687c2",
+        "src/lib.rs": "a61ef4b28733e7bdd1b758387dece2d8be72059155f9b87d87916b464329b923"
+      }
+    },
+    {
+      "name": "json-patch",
+      "version": "4.2.0",
+      "checksum": "7421438de105a0827e44fadd05377727847d717c80ce29a229f85fd04c427b72",
+      "rust_version": null,
+      "source": "https://static.crates.io/crates/json-patch/json-patch-4.2.0.crate"
+    },
+    {
+      "name": "serde_json",
+      "version": "1.0.154",
+      "checksum": "e7e9cc8b1b85264074fbcc02a88680c4096b1e47df8f739dceb03bf482f04bd6",
+      "rust_version": "1.71",
+      "source": "https://static.crates.io/crates/serde_json/serde_json-1.0.154.crate"
+    }
+  ]
+}

@@ -61,6 +61,14 @@
     {
       "path": "build/fanout-v1",
       "reason": "Selected first required 40-configuration replication proof/performance reproduction baseline"
+    },
+    {
+      "path": "build/codec-v2",
+      "reason": "Selected required generic byte-codec and actual replication admission proof/timing baseline with source/compiler bindings"
+    },
+    {
+      "path": "build/byte-fanout-v2",
+      "reason": "Selected required generic byte-codec and actual replication admission proof/timing baseline with source/compiler bindings"
     }
   ],
   "safe_to_remove": [
@@ -87,10 +95,6 @@
     {
       "path": "evidence/fanout-v1-freeze.log",
       "reason": "Completed duplicate console rendering of selected structured fanout-v1-build.json; canonical build log and receipt retained"
-    },
-    {
-      "path": "target",
-      "reason": "Completed compiler staging for selected fanout-v1 baseline and validated source. Frozen executable, compiler/source/lock/flags bindings and final proof logs are retained; no active build consumes this output."
     }
   ]
 }
